@@ -1,0 +1,50 @@
+title: Tiny Tiny RSS Documentation
+description: Documentation for tt-rss, a free and open source web-based news feed reader
+remote_theme: just-the-docs/just-the-docs
+baseurl: ""
+url: "https://tt-rss.github.io"
+
+# Just the Docs theme settings
+color_scheme: light
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+
+# Heading anchor links
+heading_anchors: true
+
+# Footer content
+footer_content: 'Documentation licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. tt-rss software licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>.'
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# External links in header
+aux_links:
+  "tt-rss on GitHub":
+    - "https://github.com/tt-rss/tt-rss"
+  "Discussions":
+    - "https://github.com/tt-rss/tt-rss/discussions"
+  "Report Issue":
+    - "https://github.com/tt-rss/tt-rss/issues"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Exclude from processing
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
