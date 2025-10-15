@@ -6,25 +6,25 @@ nav_order: 40
 
 ## **IMPORTANT**
 
-* The original tt-rss-android project, hosted at https://tt-rss.org/ and its various subdomains,
+* The original tt-rss-android project, hosted at <https://tt-rss.org/> and its various subdomains,
   [will be gone after 2025-11-01](https://community.tt-rss.org/t/the-end-of-tt-rss-org/7164).
 * There are currently no plans to continue maintaining the app.
-* The app's source code may be found at https://github.com/tt-rss/tt-rss-android .
-* **APK downloads from https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases are no longer working.  This is likely permanent.**
+* The app's source code may be found at <https://github.com/tt-rss/tt-rss-android>.
+* **APK downloads from <https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases> are no longer working.  This is likely permanent.**
 * This page's content should only be treated as a historical reference.
-* Refer to https://github.com/tt-rss/tt-rss/discussions/29 for more information.
+* Refer to <https://github.com/tt-rss/tt-rss/discussions/29> for more information.
 
 ## Screenshots
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135136.webp" width="120" align="left">](images/tt-rss-android/Screenshot_20250509_135136.webp)
+[<img src="images/tt-rss-android/Screenshot_20250509_135136.webp" width="120" align="left" alt="Android app main feed view">](images/tt-rss-android/Screenshot_20250509_135136.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135154.webp" width="120" align="left">](images/tt-rss-android/Screenshot_20250509_135154.webp)
+[<img src="images/tt-rss-android/Screenshot_20250509_135154.webp" width="120" align="left" alt="Android app article list">](images/tt-rss-android/Screenshot_20250509_135154.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135217.webp" width="120" align="left">](images/tt-rss-android/Screenshot_20250509_135217.webp)
+[<img src="images/tt-rss-android/Screenshot_20250509_135217.webp" width="120" align="left" alt="Android app article view">](images/tt-rss-android/Screenshot_20250509_135217.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135426.webp" width="120" align="left">](images/tt-rss-android/Screenshot_20250509_135426.webp)
+[<img src="images/tt-rss-android/Screenshot_20250509_135426.webp" width="120" align="left" alt="Android app settings">](images/tt-rss-android/Screenshot_20250509_135426.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135438.webp" width="120">](images/tt-rss-android/Screenshot_20250509_135438.webp)
+[<img src="images/tt-rss-android/Screenshot_20250509_135438.webp" width="120" alt="Android app preferences">](images/tt-rss-android/Screenshot_20250509_135438.webp)
 
 ## Download
 
@@ -55,7 +55,7 @@ When adding new application in Obtainium, paste [app project page](https://gitla
 
 ### I want to help test the app! Are there development builds available?
 
-Sometimes. Releases are not created for signed non-master branch builds, you can get the APKs from build pipeline artifacts [here](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/jobs) - look for `build-signed-branch-apk`. Non-master builds install as a separate application with a gray icon.
+Sometimes. Releases are not created for signed non-master branch builds, you can get the APKs from [build pipeline artifacts](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/jobs) - look for `build-signed-branch-apk`. Non-master builds install as a separate application with a gray icon.
 
 ### Why are you not on Google Play?
 

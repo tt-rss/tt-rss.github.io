@@ -12,7 +12,7 @@ Sharing is available via bookmarklet in Preferences: (`Feeds`-&rarr;
 `Bookmarklets`) (if you have ``bookmarklets`` plugin-enabled) or through Android
 application.
 
-![](../images/share_anything.png)
+![Share anything dialog](../images/share_anything.png)
 
 Since they have no actual originating feed, shared articles are placed into
 [Archived articles](Archived-Feed) feed and then set published.

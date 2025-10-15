@@ -67,20 +67,19 @@ All API methods return JSON data like this:
 {"seq":0,"status":0,"content":{"version":"1.4.3.1"}}
 ```
 
--   seq (integer) is the sequence number supplied by client (``"seq":131``)
--   status (integer) indicates whether request has been completed
-    successfully, can be either 0 (API\_STATUS\_OK) or 1
-    (API\_STATUS\_ERR)
--   content is the actual reply content, as documented below in method
-    descriptions.
+- seq (integer) is the sequence number supplied by client (``"seq":131``)
+- status (integer) indicates whether request has been completed
+  successfully, can be either 0 (API\_STATUS\_OK) or 1
+  (API\_STATUS\_ERR)
+- content is the actual reply content, as documented below in method
+  descriptions.
 
-##### 1.4.3 and below (obsolete)
+#### 1.4.3 and below (obsolete)
 
-Methods return the “content” object below, sequence numbers and statuses
+Methods return the "content" object below, sequence numbers and statuses
 are not supported.
 
-Methods
--------
+## Methods
 
 ### getApiLevel (since version:1.5.8, api level-1)
 
@@ -108,8 +107,8 @@ use this to detect API functionality, please use getApiLevel instead.
 
 Parameters:
 
--   ``user`` (string)
--   ``password`` (string)
+- ``user`` (string)
+- ``password`` (string)
 
 Returns client session ID.
 
@@ -119,12 +118,12 @@ Returns client session ID.
 
 It can also return several error objects:
 
--   If API is disabled for this user:
-    <code>error: "API_DISABLED"</code>
--   If specified username and password are incorrect:
-    <code>error: "LOGIN_ERROR"</code>
+- If API is disabled for this user:
+  <code>error: "API_DISABLED"</code>
+- If specified username and password are incorrect:
+  <code>error: "LOGIN_ERROR"</code>
 
-In case it isn’t immediately obvious, you have to login and get a
+In case it isn't immediately obvious, you have to login and get a
 session ID even if you are using single user mode. You can omit user and
 password parameters.
 
@@ -153,12 +152,6 @@ Returns an integer value of currently unread articles.
 {"unread":"992"}
 ```
 
-### getCounters
-
-Returns JSON-encoded counter information. Requires version:1.5.0.
-
-* ``output_mode`` (string, default:-flc) - what kind of information to return (f - feeds, l - labels, c - categories, t --tags)
-
 ### getFeeds
 
 Returns JSON-encoded list of feeds. The list includes category id,
@@ -166,11 +159,11 @@ title, feed url, etc.
 
 Parameters:
 
--   ``cat_id`` (integer) - return feeds under category cat\_id
--   ``unread_only`` (bool) - only return feeds which have unread articles
--   ``limit`` (integer) - limit amount of feeds returned to this value
--   ``offset`` (integer) - skip this amount of feeds first
--   ``include_nested`` (bool) - include child categories (as Feed-objects
+- ``cat_id`` (integer) - return feeds under category cat\_id
+- ``unread_only`` (bool) - only return feeds which have unread articles
+- ``limit`` (integer) - limit amount of feeds returned to this value
+- ``offset`` (integer) - skip this amount of feeds first
+- ``include_nested`` (bool) - include child categories (as Feed-objects
     ``with is_cat set)`` **requires version:1.6.0**
 
 Pagination:
@@ -187,8 +180,8 @@ Special category IDs are as follows:
 
 Added in version:1.5.0:
 
--   -3 All feeds, excluding virtual feeds (e.g. Labels and-such)
--   -4 All feeds, including virtual feeds
+- -3 All feeds, excluding virtual feeds (e.g. Labels and-such)
+- -4 All feeds, including virtual feeds
 
 Known bug: Prior to version:1.5.0 passing null or 0 cat\_id to this
 method returns full list of feeds instead of Uncategorized feeds only.
@@ -197,11 +190,11 @@ method returns full list of feeds instead of Uncategorized feeds only.
 
 Returns JSON-encoded list of categories with unread counts.
 
--   ``unread_only`` (bool) - only return categories which have unread
+- ``unread_only`` (bool) - only return categories which have unread
     articles
--   ``enable_nested`` (bool) - switch to nested mode, only returns topmost
+- ``enable_nested`` (bool) - switch to nested mode, only returns topmost
     categories **requires version:1.6.0**
--   ``include_empty`` (bool) - include empty categories **requires
+- ``include_empty`` (bool) - include empty categories **requires
     version:1.7.6**
 
 Nested mode in this case means that a flat list of **only** topmost
@@ -218,30 +211,30 @@ Returns JSON-encoded list of headlines.
 
 Parameters:
 
--   ``feed_id`` (integer|string) - only output articles for this feed (supports string values to retrieve tag virtual feeds since API level 18, otherwise-integer)
--   ``limit`` (integer) - limits the amount of returned articles (see-below)
--   ``skip`` (integer) - skip this amount of feeds first
--   ``filter`` (string) - currently unused (?)
--   ``is_cat`` (bool) - requested feed\_id is a category
--   ``show_excerpt`` (bool) - include article excerpt in the output
--   ``show_content`` (bool) - include full article text in the output
--   ``view_mode`` (string = all\_articles, unread, adaptive,-marked,
+- ``feed_id`` (integer|string) - only output articles for this feed (supports string values to retrieve tag virtual feeds since API level 18, otherwise-integer)
+- ``limit`` (integer) - limits the amount of returned articles (see-below)
+- ``skip`` (integer) - skip this amount of feeds first
+- ``filter`` (string) - currently unused (?)
+- ``is_cat`` (bool) - requested feed\_id is a category
+- ``show_excerpt`` (bool) - include article excerpt in the output
+- ``show_content`` (bool) - include full article text in the output
+- ``view_mode`` (string = all\_articles, unread, adaptive,-marked,
     updated)
--   ``include_attachments`` (bool) - include article attachments (e.g.
+- ``include_attachments`` (bool) - include article attachments (e.g.
     enclosures) **requires version:1.5.3**
--   ``since_id`` (integer) - only return articles with id greater than
+- ``since_id`` (integer) - only return articles with id greater than
     ``since_id`` **requires version:1.5.6**
--   ``include_nested`` (boolean) - include articles from child categories
+- ``include_nested`` (boolean) - include articles from child categories
     **requires version:1.6.0**
--   ``order_by`` (string) - override default sort order **requires
+- ``order_by`` (string) - override default sort order **requires
     version:1.7.6**
--   ``sanitize`` (bool) - sanitize content or not **requires version:1.8**
+- ``sanitize`` (bool) - sanitize content or not **requires version:1.8**
     (default:-true)
--   ``force_update`` (bool) - try to update feed before showing headlines
+- ``force_update`` (bool) - try to update feed before showing headlines
     **requires version:1.14 (api-9)** (default:-false)
--   ``has_sandbox`` (bool) - indicate support for sandboxing of iframe
+- ``has_sandbox`` (bool) - indicate support for sandboxing of iframe
     elements **<span class="10 api"></span>** (default:-false)
--   ``include_header`` (bool) - adds status information when returning
+- ``include_header`` (bool) - adds status information when returning
     headlines, instead of array(articles) return value changes to
     array(header,-array(articles)) (api-12)
 
@@ -253,25 +246,25 @@ Before **API level 6** maximum amount of returned headlines is capped at
 This parameters might change in the future (supported since **API-level
 2**):
 
--   ``search`` (string) - search query (e.g. a list of-keywords)
--   ``search_mode`` (string) - all\_feeds, this\_feed (default), this\_cat
+- ``search`` (string) - search query (e.g. a list of-keywords)
+- ``search_mode`` (string) - all\_feeds, this\_feed (default), this\_cat
     (category containing requested-feed)
--   ``match_on`` (string) - ignored
+- ``match_on`` (string) - ignored
 
 Special feed IDs are as follows:
 
--   -1 starred
--   -2 published
--   -3 fresh
--   -4 all articles
--   0 - archived
--   IDs \< -10 labels
+- -1 starred
+- -2 published
+- -3 fresh
+- -4 all articles
+- 0 - archived
+- IDs \< -10 labels
 
 Sort order values:
 
--   ``date_reverse`` - oldest first
--   ``feed_dates`` - newest first, goes by feed date
--   ``(nothing)`` - default
+- ``date_reverse`` - oldest first
+- ``feed_dates`` - newest first, goes by feed date
+- ``(nothing)`` - default
 
 ### updateArticle
 
@@ -279,12 +272,12 @@ Update information on specified articles.
 
 Parameters:
 
--   ``article_ids`` (comma-separated list of-integers) - article IDs to
+- ``article_ids`` (comma-separated list of-integers) - article IDs to
     operate on
--   ``mode`` (integer) - type of operation to perform (0 - set to false, 1--
+- ``mode`` (integer) - type of operation to perform (0 - set to false, 1--
     set to true, 2 - toggle)
--   ``field`` (integer) - field to operate on (0 - starred, 1 - published, 2 - unread, 3 - article note **since api level-1**)
--   ``data`` (string) - optional data parameter when setting note field
+- ``field`` (integer) - field to operate on (0 - starred, 1 - published, 2 - unread, 3 - article note **since api level-1**)
+- ``data`` (string) - optional data parameter when setting note field
     (since **api level-1**)
 
 E.g. to set unread status of articles X and Y to false use the
@@ -304,7 +297,7 @@ Since version:1.5.0 returns a status message:
 
 Requests JSON-encoded article object with specific ID.
 
--   ``article_id`` (integer) - article ID to return **as of 15.10.2010
+- ``article_id`` (integer) - article ID to return **as of 15.10.2010
     git** or version:1.5.0 supports comma-separated list of IDs
 
 Since version:1.4.3 also returns article attachments.
@@ -317,12 +310,12 @@ Returns tt-rss configuration parameters:
 {"icons_dir":"icons","icons_url":"icons","daemon_is_running":true,"num_feeds":71}
 ```
 
--   ``icons_dir`` - path to icons on the server filesystem
--   ``icons_url`` - path to icons when requesting them over http
--   ``daemon_is_running`` - whether update daemon is running
--   ``num_feeds`` - amount of subscribed feeds (this can be used to-refresh
+- ``icons_dir`` - path to icons on the server filesystem
+- ``icons_url`` - path to icons when requesting them over http
+- ``daemon_is_running`` - whether update daemon is running
+- ``num_feeds`` - amount of subscribed feeds (this can be used to-refresh
     feedlist when this amount changes)
--   ``custom_sort_types`` - map of plugin-provided article sort types (API-17+)
+- ``custom_sort_types`` - map of plugin-provided article sort types (API-17+)
 
 ### updateFeed
 
@@ -330,7 +323,7 @@ Tries to update specified feed. This operation is not performed in the
 background, so it might take considerable time and, potentially, be
 aborted by the HTTP server.
 
--   ``feed_id`` (integer) - ID of feed to update
+- ``feed_id`` (integer) - ID of feed to update
 
 Returns status-message if the operation has been completed.
 
@@ -342,7 +335,7 @@ Returns status-message if the operation has been completed.
 
 Returns preference value of specified key.
 
--   ``pref_name`` (string) - preference key to return value of
+- ``pref_name`` (string) - preference key to return value of
 
 ```json
 {"value":true}
@@ -356,9 +349,9 @@ Tries to catchup (e.g. mark as-read) specified feed.
 
 Parameters:
 
--   ``feed_id`` (integer) - ID of feed to update
--   ``is_cat`` (boolean) - true if the specified feed\_id is a category
--   ``mode`` (string) - optional: one of `all`, `1day`, `1week`, `2week`. defaults to `all`. **since api level 15**.
+- ``feed_id`` (integer) - ID of feed to update
+- ``is_cat`` (boolean) - true if the specified feed\_id is a category
+- ``mode`` (string) - optional: one of `all`, `1day`, `1week`, `2week`. defaults to `all`. **since api level 15**.
 
 Returns status-message if the operation has been completed.
 
@@ -374,15 +367,15 @@ Returns a list of unread article counts for specified feed groups.
 
 Parameters:
 
--   ``output_mode`` (string) - Feed groups to return counters for
+- ``output_mode`` (string) - Feed groups to return counters for
 
 Output mode is a character string, comprising several letters (defaults
 to “flc”):
 
--   f - actual feeds
--   l - labels
--   c - categories
--   t - tags
+- f - actual feeds
+- l - labels
+- c - categories
+- t - tags
 
 Several global counters are returned as well, those can’t be disabled
 with output\_mode.

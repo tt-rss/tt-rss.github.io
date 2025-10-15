@@ -6,7 +6,7 @@ nav_order: 21
 
 All settings (see `_DEFAULTS[]` for default-values) are listed here:
 
-- https://github.com/tt-rss/tt-rss/blob/main/classes/Config.php (source code, including default-values)
+- <https://github.com/tt-rss/tt-rss/blob/main/classes/Config.php> (source code, including default-values)
 
 It is preferred to adjust tt-rss global configuration through the environment (e.g. using your Docker `.env`-file):
 

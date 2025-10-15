@@ -16,8 +16,8 @@ is sorted by score) and alters the way article is displayed:
 
 | Score | Display / Action |
 |-------|------------------|
-| `<-500` | Score indicator points down, article is automatically marked as read
-| `<-100` | Score indicator points down
+| `<-500` | Score indicator points down, article is automatically marked as read |
+| `<-100` | Score indicator points down |
 | `<0`    | Score indicator points down, 1.5.0: article is excluded from Fresh feed and (as of 1.5.10 also excluded from email-digest) |
 |   `0`   | Display normally |
 | `>0`    | Score indicator points up |
@@ -29,4 +29,4 @@ is sorted by score) and alters the way article is displayed:
 Calculated score for an individual article may be adjusted by clicking on score
 indicator in the headlines list:
 
-![](../images/score_indicator2.png)
+![Score indicator](../images/score_indicator2.png)

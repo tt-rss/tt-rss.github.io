@@ -19,13 +19,13 @@ This assumes you can't simply reset your password via email (login form - forgot
 
 If you have OTP (2FA) enabled and know your password but can't provide an OTP token, you can disable OTP via SQL:
 
-```
+```sql
 UPDATE ttrss_users SET otp_enabled = false WHERE login = 'you'
 ```
 
 If you don't remember your password run the following query:
 
-```
+```sql
 UPDATE ttrss_users
     SET pwd_hash = 'SHA1:5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', salt = '', otp_enabled = false
     WHERE login = 'you'
@@ -65,12 +65,11 @@ Log in to tt-rss in safe mode (use an incognito window if you can't get to login
 
 For combined mode:
 
-```
+```css
 body.ttrss_main .cdm .content img, body.ttrss_main .cdm .content video {
     max-height : 90vh;
     height : auto;
 }
-
 ```
 
 `90vh` means "90% of viewport height". This works on Chromium and derivatives, you can use `90%` for Firefox.
@@ -81,7 +80,7 @@ This is controlled by a global configuration setting. You can override (or-disab
 
 Note that this also effectively disables purging of articles stored for inactive users.
 
-### I have questions about article purging / I don't think purging works.
+### I have questions about article purging / I don't think purging works
 
 Purging is performed on successful feed update, no updates = no purging.
 
@@ -93,7 +92,7 @@ Import date is bumped every time article is encountered in the feed, otherwise i
 
 When in doubt, use Feed debugger (`f D` on a-feed) to see additional purging-related information:
 
-```
+```text
 [11:08:10/6783] purging feed...
 [11:08:10/6783] purge_feed: interval 60 days for feed XXX, owner: X, purge unread: 1
 [11:08:10/6783] purge_feed: deleted 1 articles.
@@ -108,13 +107,13 @@ Because the articles are still in the feed XML and get pulled in (again) on next
 
 See-also: [Archived Feed](Archived-Feed.md)
 
-### I have used update daemon before, but switched away from it. However, the UI keeps nagging me about the daemon not running or not updating feeds or whatever.
+### I have used update daemon before, but switched away from it. However, the UI keeps nagging me about the daemon not running or not updating feeds or whatever
 
-Find and delete daemon lock file in <code>LOCK_DIRECTORY</code>. Usually, it’s <code>lock/update_daemon.lock</code>. You can also remove <code>update_daemon.stamp</code>.
+Find and delete daemon lock file in <code>LOCK_DIRECTORY</code>. Usually, it's <code>lock/update_daemon.lock</code>. You can also remove <code>update_daemon.stamp</code>.
 
-### I need an URL I can call to subscribe to feed to integrate with some third party browser extension/application.
+### I need an URL I can call to subscribe to feed to integrate with some third party browser extension/application
 
-```
+```text
 https://example.com/tt-rss/public.php?op=bookmarklets--subscribe&feed_url=%s
 ```
 
@@ -124,7 +123,7 @@ If feed URL is empty (or not-given) tt-rss will display feed subscription dialog
 
 There's a simple unauthenticated endpoint to do just that:
 
-```
+```bash
 $ curl -s "https://example.com/tt-rss/public.php?op=getUnread&login=you&fresh=1" ; echo
 8;1
 $ curl -s "https://example.com/tt-rss/public.php?op=getUnread&login=you" ; echo

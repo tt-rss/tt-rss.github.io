@@ -17,7 +17,7 @@ nav_order: 2
 
 The main (and-recommended) way to run tt-rss is under Docker.
 
-Docker images for https://github.com/tt-rss/tt-rss are being built (for `linux/amd64` and-`linux/arm64`) and published
+Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and-`linux/arm64`) and published
 ([via GitHub-Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
 * Docker Hub (as-[supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
 * GitHub Container Registry (as-[ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
@@ -88,7 +88,7 @@ HTTP_PORT=127.0.0.1:8280
 ### docker-compose.yml
 
 >[!WARNING]
-> See [this FAQ entry](#i-got-the-updated-compose-file-above-and-now-my-database-keeps-restarting)
+> See [this FAQ entry](#i-got-the-updated-docker-compose-file-above-and-now-my-database-keeps-restarting)
 > if you're upgrading between PostgreSQL major versions (e.g. 15 to-17).
 
 > [!WARNING]
@@ -97,7 +97,7 @@ HTTP_PORT=127.0.0.1:8280
     Consider using an alternative backup solution if you're using PostgreSQL 18.
 > * The PostgreSQL 18 Docker image changed the volume from `/var/lib/postgresql/data` to `/var/lib/postgresql`.
 >   The example below includes a commented-out volume mapping that demonstrates this.
->   * See https://hub.docker.com/_/postgres and https://github.com/docker-library/postgres/pull/1259 for more info.
+>   * See <https://hub.docker.com/_/postgres> and <https://github.com/docker-library/postgres/pull/1259> for more info.
 
 ```yaml
 services:
@@ -179,7 +179,7 @@ volumes:
 
 ## FAQ
 
-### Your Docker images won't run on X!
+### Your Docker images won't run on X
 
 If you're using an OS or architecture that isn't currently supported you'll likely need to
 build your own Docker images by using an override and running `docker compose build`.
@@ -258,7 +258,7 @@ TTRSS_SELF_URL_PATH=http://example.com/tt-rss
 
 Don't use quotes around values. Note the prefix (`TTRSS_`) before the value.
 
-Look [here](https://github.com/tt-rss/tt-rss/wiki/Global-Config) for more information.
+Look at [Global-Config](Global-Config.md) for more information.
 
 #### Container options
 
@@ -278,7 +278,7 @@ services:
 ### I'm trying to run CLI tt-rss scripts inside the container and they complain about root
 
 In your Docker Compose directory, run something like one of the examples below.
-Check https://github.com/tt-rss/tt-rss/blob/main/.docker/app/Dockerfile for the latest image's PHP version.
+Check <https://github.com/tt-rss/tt-rss/blob/main/.docker/app/Dockerfile> for the latest image's PHP version.
 
 ```sh
 docker compose exec --user app app php84 /var/www/html/tt-rss/update.php --help
@@ -335,7 +335,7 @@ Copy and/or git clone any third party plugins into ``plugins.local`` as usual.
 
 First, check that all containers are running:
 
-```
+```text
 $ docker compose ps
                    Name                                 Command               State           Ports
 ------------------------------------------------------------------------------------------------------------
@@ -348,7 +348,7 @@ ttrss-docker-demo_web-nginx_1_fcef07eb5c55   /docker-entrypoint.sh ngin ...   Up
 
 Then, ensure that frontend (`web-nginx` or-`web`) container is up and can contact FPM (`app`) container:
 
-```
+```text
 $ docker compose exec web-nginx ping app
 PING app (172.18.0.3): 56 data bytes
 64 bytes from 172.18.0.3: seq=0 ttl=64 time=0.144 ms
@@ -423,7 +423,7 @@ Note that `proxy_pass` in this example points to container website root.
 
 #### Apache example
 
-```
+```apache
 <IfModule mod_proxy.c>
     <Location /tt-rss>
       ProxyPreserveHost On
@@ -510,6 +510,6 @@ You'll need to set several mandatory environment values to the container running
 
 You'll have to make your own.
 
-### I'm using Podman, and...
+### I'm using Podman, and
 
 We neither test against nor support Podman.

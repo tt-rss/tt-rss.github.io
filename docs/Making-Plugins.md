@@ -15,14 +15,14 @@ with anything specific.
 
 Some useful information may be found here:
 
-- https://github.com/tt-rss/tt-rss/blob/main/classes/PluginHost.php
-- https://github.com/tt-rss/tt-rss/blob/main/classes/Plugin.php
+- <https://github.com/tt-rss/tt-rss/blob/main/classes/PluginHost.php>
+- <https://github.com/tt-rss/tt-rss/blob/main/classes/Plugin.php>
 
 Frontend (JS) uses different hooks, which are defined in [PluginHost.js](https://github.com/tt-rss/tt-rss/blob/main/js/PluginHost.js)
 
 ## Localization support
 
-See ``time_to_read`` plugin for a complete example [here](https://github.com/tt-rss/tt-rss-plugin-time-to-read)
+See ``time_to_read`` plugin for [a complete example](https://github.com/tt-rss/tt-rss-plugin-time-to-read)
 
 ### Implementation
 

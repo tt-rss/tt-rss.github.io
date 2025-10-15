@@ -1,6 +1,6 @@
 # Tiny Tiny RSS Documentation Site
 
-This repository contains the source for the https://tt-rss.github.io.
+This repository contains the source for <https://tt-rss.github.io>.
 
 ## License
 
@@ -44,7 +44,7 @@ bundle exec jekyll serve
 
 ## Structure
 
-```
+```text
 tt-rss.github.io/
 ├── _config.yml          # Jekyll configuration
 ├── index.md             # Homepage

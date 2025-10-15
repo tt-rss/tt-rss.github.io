@@ -12,9 +12,9 @@ Tiny Tiny RSS (tt-rss) is a free, flexible, open-source, web-based news feed (RS
 
 ## Screenshots
 
-[<img src="images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.19.webp" width="350" style="float: left">](images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.19.webp)
-[<img src="images/tt-rss/25.05/Screenshot_2025-05-10_at_09.21.21.webp" width="350" style="float: left">](images/tt-rss/25.05/Screenshot_2025-05-10_at_09.21.21.webp)
-[<img src="images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.50.webp" width="350">](images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.50.webp)
+[<img src="images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.19.webp" width="350" style="float: left" alt="tt-rss main interface">](images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.19.webp)
+[<img src="images/tt-rss/25.05/Screenshot_2025-05-10_at_09.21.21.webp" width="350" style="float: left" alt="tt-rss article view">](images/tt-rss/25.05/Screenshot_2025-05-10_at_09.21.21.webp)
+[<img src="images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.50.webp" width="350" alt="tt-rss preferences">](images/tt-rss/25.05/Screenshot_2025-05-10_at_09.22.50.webp)
 
 ## Features
 
@@ -46,7 +46,7 @@ See the [Installation Guide](docs/Installation-Guide.md) for detailed instructio
 
 > [!WARNING]
 > If you choose to run tt-rss without using Docker support might be limited.
-
+>
 > [!NOTE]
 > Tiny Tiny RSS uses a continuous development model based on the `main` branch, which is considered stable.
 > It's strongly recommended that you remain current-- meaning using either the most recent Docker image(s) or commit on `main`.
