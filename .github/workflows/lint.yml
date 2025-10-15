@@ -1,3 +1,4 @@
+---
 name: Lint
 
 on:
@@ -28,7 +29,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
-          # Validate all files on push/workflow_dispatch, only changed files on PRs
-          VALIDATE_ALL_CODEBASE: ${{ github.event_name != 'pull_request' }}
+          # Validate all files on push/workflow_dispatch, only changed files on
+          # PRs
+          VALIDATE_ALL_CODEBASE: >-
+            ${{ github.event_name != 'pull_request' }}
           VALIDATE_MARKDOWN: true
           VALIDATE_YAML: true

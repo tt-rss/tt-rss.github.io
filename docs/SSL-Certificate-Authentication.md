@@ -23,7 +23,12 @@ This guide was written with Debian 9 in mind, other distros will vary.
 
 ## Getting Started
 
-Client certificates are typically created/issued by a private Certificate Authority (i.e. **you** as the administrator would create the certificates for your-users). You create a root certificate authority and install the **public** certificate for it on your web server. You then create certificates for each client, signed by the root certificate authority's private key. Each client is issued their certificate and private key (often as a single file with a `.p12`-extension).
+Client certificates are typically created/issued by a private Certificate Authority
+(i.e. **you** as the administrator would create the certificates for your-users). You
+create a root certificate authority and install the **public** certificate for it on
+your web server. You then create certificates for each client, signed by the root
+certificate authority's private key. Each client is issued their certificate and
+private key (often as a single file with a `.p12`-extension).
 
 Note:
 
@@ -85,12 +90,28 @@ define('PLUGINS', 'auth_internal, auth_remote,-note');
 
 You might be tempted to remove `auth_internal` but we still need it so don't.
 
-Next, make sure your client certificate (the `.p12`-file) is installed on your computer. Different operating systems and browsers do this differently, so you're pretty much on your own there, but if you double-click the .p12 file from the desktop the operating system should offer to install it for you. Vendor-provided browsers (e.g. IE/Edge, Safari,-etc.) will typically use certificates provided by the operating system. Third-party installed browsers (e.g.-Firefox) often need to have the .p12 file added to them independent of the operating system.
+Next, make sure your client certificate (the `.p12`-file) is installed on your
+computer. Different operating systems and browsers do this differently, so you're
+pretty much on your own there. However, if you double-click the .p12 file from the
+desktop, the operating system should offer to install it for you.
+
+Vendor-provided browsers (e.g. IE/Edge, Safari, etc.) will typically use
+certificates provided by the operating system. Third-party installed browsers (e.g.
+Firefox) often need to have the .p12 file added to them independently of the
+operating system.
 
 After successfully installing the client certificate, open a new browser window/tab and visit your TT-RSS install. You should immediately be asked to confirm or select the client certificate you want to use. Select the appropriate one. You may have to login with your username/password; this is expected.
 
 Go to Preferences and scroll to the bottom. Under *Login with an SSL certificate* the *Register* button should now be available. Click it, then *Save configuration*.
 
-At this point you should be able to test if this all works. Logout of your TT-RSS session, clear your browser cache and cookies, then open a new window/tab and visit your TT-RSS install. You may be asked to verify the client certificate (some browsers ask every session and others remember your-choice). Once you select the certificate it should just log you without using the username/password form.
+At this point you should be able to test if this all works. Logout of your TT-RSS
+session, clear your browser cache and cookies, then open a new window/tab and visit
+your TT-RSS install. You may be asked to verify the client certificate (some
+browsers ask every session and others remember your choice). Once you select the
+certificate it should just log you without using the username/password form.
 
-Finally, if you're never going to use password authentication you could remove `auth_internal` plugin in `config.php`, just remember to add it back if you remove certificate support in the future otherwise you'll get the login form but will never be able to login. You'll also need to enable it if you have to change client certificates as there will be no other way of logging in.
+Finally, if you're never going to use password authentication you could remove
+`auth_internal` plugin in `config.php`, just remember to add it back if you remove
+certificate support in the future otherwise you'll get the login form but will never
+be able to login. You'll also need to enable it if you have to change client
+certificates as there will be no other way of logging in.
