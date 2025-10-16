@@ -4,6 +4,7 @@ name: Build and deploy Pages
 on:
   push:
     branches: [main]
+  # Allow manual triggering
   workflow_dispatch:
 
 permissions:

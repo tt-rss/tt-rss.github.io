@@ -4,8 +4,6 @@ name: Lint
 on:
   pull_request:
     branches: [main]
-  push:
-    branches: [main]
   # Allow manual triggering
   workflow_dispatch:
   # Allow other workflows (e.g. Pages) to invoke this one.
