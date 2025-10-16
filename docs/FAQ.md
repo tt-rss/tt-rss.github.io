@@ -4,7 +4,7 @@ title: FAQ
 nav_order: 30
 ---
 
-> [!NOTE]
+{: .note }
 > [Docker-related stuff is on a separate page](Installation-Guide#faq)
 
 ### I want to check how tt-rss renders my feed / the feed I'm trying to use is parsed incorrectly

@@ -7,7 +7,7 @@ nav_order: 51
 Tiny Tiny RSS provides four options for how articles appear within a
 selected feed: `Default`, `Newest`, `Oldest`, `Title`.
 
-> [!NOTE]
+{: .note }
 > Special feeds (e.g. *Starred-articles*) have unique sorting when *Default* is selected, otherwise they behave as described below.
 
 - *Descending score* means **higher numbers** are shown before lower numbers.

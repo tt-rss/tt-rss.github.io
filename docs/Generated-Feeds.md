@@ -10,7 +10,7 @@ this icon:
 
 ![Generated feed icon](../images/gen_feed_icon.png)
 
-> [!WARNING]
+{: .warning }
 > Subscribing to your own feed of search results is going to produce
 > duplicate articles on each and every feed update.
 

@@ -4,7 +4,7 @@ title: SSL Certificate Authentication
 nav_order: 52
 ---
 
-> [!WARNING]
+{: .warning }
 > This guide is considered legacy and is no longer supported as it is not compatible with the
 > [stock Docker Compose](Installation-Guide) setup. Please don't report any issues when
 > trying to DIY this.

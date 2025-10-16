@@ -22,7 +22,7 @@ Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux
 * GitHub Container Registry (as-[ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
   and [ghcr.io/tt-rss/tt-rss-web-nginx](https://github.com/orgs/tt-rss/packages/container/package/tt-rss-web-nginx)).
 
-> [!WARNING]
+{: .warning }
 > Podman is not Docker. Please don't report issues related to running tt-rss when using Podman or Podman Compose.
 
 This setup uses PostgreSQL and runs tt-rss using several containers as outlined below.
@@ -89,7 +89,7 @@ HTTP_PORT=127.0.0.1:8280
 >[!WARNING]
 > See [this FAQ entry](#i-got-the-updated-docker-compose-file-above-and-now-my-database-keeps-restarting)
 > if you're upgrading between PostgreSQL major versions (e.g. 15 to-17).
-> [!WARNING]
+{: .warning }
 > Regarding PostgreSQL 18:
 > * The `backups` container image currently includes `postgresql17-client`, meaning it won't be able to back up your DB if you use PostgreSQL 18.
     Consider using an alternative backup solution if you're using PostgreSQL 18.
@@ -207,7 +207,7 @@ services:
 `BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version info properly.
 If that doesn't work for you (no-BuildKit?) you'll have to resort to terrible hacks.
 
-> [!WARNING]
+{: .warning }
 > Self-built images are not necessarily supported (i.e. best effort and/or community-support).
 
 ### I got the updated Docker Compose file above and now my database keeps restarting
@@ -303,7 +303,7 @@ Note: `sudo -E` is needed to keep environment variables.
 
 ### How do I add plugins and themes?
 
-> [!NOTE]
+{: .note }
 > First party plugins can be added using plugin installer in `Preferences` &rarr; `Plugins`.
 
 By default, tt-rss code is stored on a persistent Docker volume (`app`). You can find

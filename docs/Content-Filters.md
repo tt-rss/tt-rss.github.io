@@ -13,7 +13,7 @@ Matching is case-insensitive,
 [PCRE](http://php.net/manual/en/reference.pcre.pattern.syntax.php) pattern
 syntax is used.
 
-> [!NOTE]
+{: .note }
 > Filter test dialog may not give entirely accurate results, especially for
 > complex filters. It is suggested to test filters using ``Feed debugger`` (hotkey `f-D`) if you
 > feel that some filter is somehow misfiring on a specific feed.
@@ -44,7 +44,7 @@ expressions.
 
 Filter matching is performed during feed processing.
 
-> [!NOTE]
+{: .note }
 > Some actions may be applied only when the article is initially imported from the
 > feed. Other actions may be applied every time article is seen in the originating
 > feed. It is suggested to only rely on filters applying to articles imported
@@ -53,7 +53,7 @@ Filter matching is performed during feed processing.
 
 Several actions are available:
 
-> [!WARNING]
+{: .warning }
 > Filters may not apply actions conditionally based on previous filters. All actions for an article are applied together, once.
 
 1. ``Delete article`` - do not import article from the feed, does not

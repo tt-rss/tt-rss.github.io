@@ -52,7 +52,7 @@ putenv('TTRSS_SESSION_COOKIE_LIFETIME=86400*30');
 // instead you're casting string literal "86400*30" to an integer
 ```
 
-> [!NOTE]
+{: .note }
 > All values should be precalculated when setting via `.env` because they are not evaluated by PHP and used as-is.
 
 ## Minimal config.php for a non-Docker setup

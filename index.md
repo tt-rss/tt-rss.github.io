@@ -44,10 +44,10 @@ You will need the following:
 
 See the [Installation Guide](docs/Installation-Guide.md) for detailed instructions.
 
-> [!WARNING]
+{: .warning }
 > If you choose to run tt-rss without using Docker support might be limited.
 >
-> [!NOTE]
+{: .note }
 > Tiny Tiny RSS uses a continuous development model based on the `main` branch, which is considered stable.
 > It's strongly recommended that you remain current-- meaning using either the most recent Docker image(s) or commit on `main`.
 

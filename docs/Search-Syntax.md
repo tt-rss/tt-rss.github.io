@@ -4,7 +4,7 @@ title: Search Syntax
 nav_order: 48
 ---
 
-> [!NOTE]
+{: .note }
 > This only applies to built-in search, other search plugins like may override this syntax.
 
 Search query consists of several keywords. Keyword starting with "-" is considered a negative match. Several special keywords are available:

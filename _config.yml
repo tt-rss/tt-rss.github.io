@@ -38,6 +38,23 @@ aux_links:
   "Report Issue":
     - "https://github.com/tt-rss/tt-rss/issues"
 
+# Callouts
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
 # Markdown settings
 markdown: kramdown
 kramdown:

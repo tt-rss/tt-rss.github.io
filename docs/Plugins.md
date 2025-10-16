@@ -27,7 +27,7 @@ If you are interested in making plugins, see [Making-Plugins](Making-Plugins),
 
 ### Installing plugins
 
-> [!NOTE]
+{: .note }
 > First party plugins can be added via built-in plugin installer in `Preferences` &rarr; `Plugins`.
 
 Copy plugin folder to ```tt-rss/plugins.local``` then activate it in the settings panel.
@@ -40,10 +40,10 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 
 ## Third party plugins
 
-> [!WARNING]
+{: .warning }
 > We're not responsible for third party plugins. Use at your own risk.
 >
-> [!NOTE]
+{: .note }
 > Third party plugins may be unmaintained and incompatible with newer tt-rss
 > code (especially those from the old-forums). Please report plugin-related
 > problems to their developers.

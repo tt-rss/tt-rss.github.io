@@ -30,7 +30,7 @@ nav_order: 40
 
 Releases are built automatically for every commit pushed to master branch and [published on Gitlab](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases).
 
-> [!WARNING]
+{: .warning }
 > This is the only official and supported way to get the APK. If you see the app on any marketplace or anywhere else, it had been uploaded there without my knowledge or consent.
 
 Release APKs are signed. You can verify the signature using [apksigner](https://developer.android.com/tools/apksigner):

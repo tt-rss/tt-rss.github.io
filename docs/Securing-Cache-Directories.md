@@ -4,7 +4,7 @@ title: Securing Cache Directories
 nav_order: 49
 ---
 
-> [!NOTE]
+{: .note }
 > Official container images restrict `/cache` access by default. This page applies only to
 > legacy host installations.
 

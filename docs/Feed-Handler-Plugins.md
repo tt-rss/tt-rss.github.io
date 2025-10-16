@@ -4,7 +4,7 @@ title: Feed Handler Plugins
 nav_order: 44
 ---
 
-> [!WARNING]
+{: .warning }
 > Unless you have a strong need for these plugins, using them is not recommended. If
 > you do use them, at least don't enable them for all feeds.
 

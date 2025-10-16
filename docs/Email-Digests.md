@@ -9,7 +9,7 @@ Users may opt into receiving daily (sent once every 24-hours) digests of unread 
 Digests are sent out by the update daemon or if running <code>update.php —feeds</code>
 manually. At most 15 messages are sent in one batch.
 
-> [!NOTE]
+{: .note }
 > [PHPMailer plugin](https://github.com/tt-rss/tt-rss-plugin-mailer-smtp) is required to send mail under Docker.
 
 
