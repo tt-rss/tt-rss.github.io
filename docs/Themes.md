@@ -4,7 +4,7 @@ title: Themes
 nav_order: 12
 ---
 
-Install by copying theme CSS (and any other content, if-needed) into ``themes.local`` directory under tt-rss root, then you'll be able to activate it in preferences.
+Install by copying theme CSS (and any other content, if needed) into ``themes.local`` directory under tt-rss root, then you'll be able to activate it in preferences.
 
 **Please note that we’re not responsible for third party themes. Use at your own risk.**
 

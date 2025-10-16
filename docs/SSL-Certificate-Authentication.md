@@ -82,7 +82,7 @@ Now restart Nginx:
 sudo systemctl restart nginx
 ```
 
-Update the TT-RSS config file to add `auth_remote` to the `PLUGINS` constant (near the end of the-file):
+Update the TT-RSS config file to add `auth_remote` to the `PLUGINS` constant (near the end of the file):
 
 ```php
 define('PLUGINS', 'auth_internal, auth_remote,-note');

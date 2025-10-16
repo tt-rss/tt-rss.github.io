@@ -9,13 +9,13 @@ nav_order: 44
 > you do use them, at least don't enable them for all feeds.
 
 Some plugins utilize global per-feed content hooks which either modify fetched
-feed XML data (i.e. fixing broken-XML) or even generate it entirely, for tt-rss
+feed XML data (i.e. fixing broken XML) or even generate it entirely, for tt-rss
 to process, for websites that don't actually provide RSS feeds.
 
 While having this ability available for plugins is valuable there are several
 downsides:
 
-1. This entirely bypasses rate-limiting and article duplicate checking done
+1. This entirely bypasses rate limiting and article duplicate checking done
    during normal feed update process. A badly written plugin using
    <code>HOOK_FETCH_FEED</code> may cause your tt-rss feed to keep updating
    feeds indefinitely, processing all articles every time, causing unnecessary

@@ -43,7 +43,7 @@ http://example.com/tt-rss/public.php?op=rss&id=61&is_cat=1&view-mode=adaptive&ke
 - ``offset`` - start output while skipping this amount of articles, default: 0
 - ``order`` - override default headlines order
 - ``ts`` - output articles newer than timestamp in [strtotime](http://www.php.net/manual/en/function.strtotime.php)
-    accepted format (since-version:1.12) i.e. stuff like <code>ts=1%20month%20ago</code>
+    accepted format (since version 1.12) i.e. stuff like <code>ts=1%20month%20ago</code>
 
 ### Special feed IDs
 

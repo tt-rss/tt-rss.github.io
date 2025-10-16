@@ -5,7 +5,7 @@ nav_order: 50
 ---
 
 You can share arbitrary webpages to appear as articles in your ``Published``
-feed. Combined with Readability this makes tt-rss function like a read-it-later
+feed. Combined with Readability this makes tt-rss function like a read it later
 kind of website.
 
 Sharing is available via bookmarklet in Preferences: (`Feeds`-&rarr;

@@ -32,7 +32,7 @@ See ``time_to_read`` plugin for [a complete example](https://github.com/tt-rss/t
 ### Using gettext
 
 - On the PHP side, either use helper methods defined in ``classes/plugin.php``
-  (base class for all-plugins) or call ``_dgettext`` group of functions
+  (base class for all plugins) or call ``_dgettext`` group of functions
   directly.
 - On the Javascript side, all translations are merged so you can use the usual
   ``__()`` shortcut function.

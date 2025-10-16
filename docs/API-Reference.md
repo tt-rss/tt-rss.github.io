@@ -15,7 +15,7 @@ nav_order: 3
 ---
 
 API is pluggable, plugins can use host <code>add\_api\_method()</code> to add
-custom API calls (see <code>classes/pluginhost.php</code> for-details).
+custom API calls (see <code>classes/pluginhost.php</code> for details).
 
 API is stateful. You need to login and maintain a session ID to perform further operations. Session ID should be specified using JSON parameter **sid**. I.e.
 
@@ -25,16 +25,16 @@ curl -d '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/
 
 All API calls output JSON-encoded data. API can be enabled or disabled
 per-user in the preferences. Client parameters should be passed encoded
-using JSON in HTTP POST data (supported since-version:1.5.3). Older
+using JSON in HTTP POST data (supported since version 1.5.3). Older
 versions allowed passing parameters using HTTP GET and POST, but this is
 no longer supported.
 
 ### Numeric values
 
-Numbers can also be passed (and are sometimes-returned) as quoted string literals, i.e. ``"0"``.
+Numbers can also be passed (and are sometimes returned) as quoted string literals, i.e. ``"0"``.
 
 Some tt-rss versions have issues recognizing ``0`` as a valid number
-(unimplemented strict type checking causes ``0`` to be equivalent to-``false``
+(unimplemented strict type checking causes ``0`` to be equivalent to ``false``
 in ``getHeadlines``, etc) so it might be a good idea to pass numerics as quoted
 strings for better backwards compatibility.
 
@@ -45,7 +45,7 @@ For boolean parameters the expected syntax is:
 - empty string, numeric zero, unquoted ``false`` literal (?), string literal ``"f"`` or ``"false"``: <b>FALSE</b>
 - anything else: <b>TRUE</b>
 
-## Testing API calls (using-curl)
+## Testing API calls (using curl)
 
 ```bash
 curl -d '{"op":"login","user":"you","password":"xxx"}' http://example.com/tt-rss/api/
@@ -55,7 +55,7 @@ curl -d '{"op":"login","user":"you","password":"xxx"}' http://example.com/tt-rss
 curl -d '{"sid":"...","op":"getHeadlines","feed_id":"0","is_cat":"1"}' http://example.com/tt-rss/api/
 ```
 
-Most of the calls (except login, logout,-isLoggedIn) require valid login session
+Most of the calls (except login, logout, isLoggedIn) require valid login session
 or will return this error object: <code>{"error":"NOT_LOGGED_IN"}</code>
 
 ## Output format
@@ -90,7 +90,7 @@ functionality, instead of using getVersion.
 {"level":1}
 ```
 
-Whether tt-rss returns error for this method (e.g. version:1.5.7-and
+Whether tt-rss returns error for this method (e.g. version 1.5.7 and
 below) client should assume API level 0.
 
 ### getVersion
@@ -230,9 +230,9 @@ Parameters:
 - ``sanitize`` (bool) - sanitize content or not **requires version:1.8**
     (default:-true)
 - ``force_update`` (bool) - try to update feed before showing headlines
-    **requires version:1.14 (api-9)** (default:-false)
+    **requires version:1.14 (api-9)** (default: false)
 - ``has_sandbox`` (bool) - indicate support for sandboxing of iframe
-    elements **<span class="10 api"></span>** (default:-false)
+    elements **<span class="10 api"></span>** (default: false)
 - ``include_header`` (bool) - adds status information when returning
     headlines, instead of array(articles) return value changes to
     array(header,-array(articles)) (api-12)

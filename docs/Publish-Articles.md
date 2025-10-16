@@ -5,7 +5,7 @@ nav_order: 46
 ---
 
 You can publish selected articles to a special RSS feed, accessible to anyone
-who knows the special randomly-generated URL. This works independently of
+who knows the special randomly generated URL. This works independently of
 [Generated-Feeds](Generated-Feeds.md) which allows you to share entire feeds,
 categories, etc.
 
@@ -18,4 +18,4 @@ Resulting URL is displayed in Preferences (`Feeds` &rarr; `Published & shared-ar
 
 
 {: .note }
-> You can also publish articles automatically using filters (`Action` &rarr; `Publish-article`).
+> You can also publish articles automatically using filters (`Action` &rarr; `Publish article`).
