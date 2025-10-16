@@ -4,7 +4,6 @@ title: API Reference
 nav_order: 3
 ---
 
-# API Reference
 {: .no_toc }
 
 ## Table of contents
@@ -74,7 +73,7 @@ All API methods return JSON data like this:
 - content is the actual reply content, as documented below in method
   descriptions.
 
-#### 1.4.3 and below (obsolete)
+### 1.4.3 and below (obsolete)
 
 Methods return the "content" object below, sequence numbers and statuses
 are not supported.
@@ -174,7 +173,7 @@ instead.
 
 Special category IDs are as follows:
 
-*  0 Uncategorized
+* 0 Uncategorized
 * -1 Special (e.g. Starred, Published, Archived,-etc.)
 * -2 Labels
 

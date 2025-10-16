@@ -4,7 +4,6 @@ title: Installation Guide
 nav_order: 2
 ---
 
-# Installation Guide
 {: .no_toc }
 
 ## Table of contents
@@ -90,7 +89,6 @@ HTTP_PORT=127.0.0.1:8280
 >[!WARNING]
 > See [this FAQ entry](#i-got-the-updated-docker-compose-file-above-and-now-my-database-keeps-restarting)
 > if you're upgrading between PostgreSQL major versions (e.g. 15 to-17).
-
 > [!WARNING]
 > Regarding PostgreSQL 18:
 > * The `backups` container image currently includes `postgresql17-client`, meaning it won't be able to back up your DB if you use PostgreSQL 18.

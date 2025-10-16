@@ -22,7 +22,8 @@ putenv('TTRSS_PLUGINS=auth_internal,-other_plugin');
 System plugins are always enabled for all users. If multiple search plugins are loaded, only the first one is used
 
 If you are interested in making plugins, see [Making-Plugins](Making-Plugins),
-https://github.com/topics/tt-rss-plugin , https://github.com/topics/ttrss-plugins , etc.
+<https://github.com/topics/tt-rss-plugin>,
+<https://github.com/topics/ttrss-plugins>, etc.
 
 ### Installing plugins
 

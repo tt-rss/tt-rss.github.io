@@ -6,7 +6,7 @@ description: "Tiny Tiny RSS (tt-rss) is a free, flexible, open-source, web-based
 permalink: /
 ---
 
-# Tiny Tiny RSS
+{: .no_toc }
 
 Tiny Tiny RSS (tt-rss) is a free, flexible, open-source, web-based news feed (RSS/Atom/other) reader and aggregator.
 

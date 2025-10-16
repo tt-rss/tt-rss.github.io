@@ -12,7 +12,7 @@ categories, etc.
 You can mark articles as published by clicking [standard feed
 icon](http://feedicons.com/) near headline title:
 
-![](../images/publish_articles.png)
+![Publish icon in article header](../images/publish_articles.png)
 
 Resulting URL is displayed in Preferences (`Feeds` &rarr; `Published & shared-articles`).
 

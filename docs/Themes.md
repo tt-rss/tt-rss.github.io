@@ -15,7 +15,7 @@ Install by copying theme CSS (and any other content, if-needed) into ``themes.lo
 
 A clean and minimal theme for Tiny Tiny RSS, loosely inspired by Feedly. Built by making the minimal amount of changes to the default theme. This repo also includes a set of plugins.
 
-**Codeberg** https://codeberg.org/ltguillaume/feedmei
+**Codeberg** <https://codeberg.org/ltguillaume/feedmei>
 
 ### Clean GReader Theme
 
@@ -24,7 +24,7 @@ A clean and minimal theme for Tiny Tiny RSS, loosely inspired by Feedly. Built b
 A theme built from scratch, independent of default css. Inspired by the
 Google Reader it has a white/greyish look.
 
-**Github** https://github.com/naeramarth7/clean-greader
+**Github** <https://github.com/naeramarth7/clean-greader>
 
 ### Feedly Theme
 
@@ -32,7 +32,7 @@ Google Reader it has a white/greyish look.
 
 A theme built from scratch, independent of default css. Emulates the greyish look of Feedly.
 
-**Github** https://github.com/levito/tt-rss-feedly-theme
+**Github** <https://github.com/levito/tt-rss-feedly-theme>
 
 ### Reeder Theme
 
@@ -42,5 +42,5 @@ Theme emulates the paper/brownish look of the Reeder App from IOS.
 
 **Github**
 
-* tt-rss \>1.11 https://github.com/tschinz/tt-rss\_reeder\_theme
-* tt-rss \<1.11 (old-version) https://github.com/tschinz/tt-rss\_reeder\_theme/tree/legacy
+* tt-rss \>1.11 <https://github.com/tschinz/tt-rss\_reeder\_theme>
+* tt-rss \<1.11 (old-version) <https://github.com/tschinz/tt-rss\_reeder\_theme/tree/legacy>
