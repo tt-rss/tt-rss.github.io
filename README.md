@@ -1,6 +1,6 @@
 # Tiny Tiny RSS Documentation Site
 
-This repository contains the source for <https://tt-rss.github.io>.
+This repository contains the source for <https://tt-rss.org>.
 
 ## Contributing
 
@@ -11,7 +11,7 @@ By contributing, you agree that your contributions will be licensed under CC BY-
 ## Structure
 
 ```text
-tt-rss.github.io/
+/
 ├── _config.yml          # Jekyll configuration
 ├── index.md             # Homepage
 ├── docs/                # Documentation pages
@@ -37,8 +37,8 @@ bundle exec jekyll serve
 
 ## Useful Links
 
-- **Documentation Repository:** [https://github.com/tt-rss/tt-rss.github.io](https://github.com/tt-rss/tt-rss.github.io)
-- **Documentation Site:** [https://tt-rss.github.io](https://tt-rss.github.io)
+- **Documentation Repository:** [https://github.com/tt-rss/tt-rss.org](https://github.com/tt-rss/tt-rss.org)
+- **Documentation Site:** [https://tt-rss.org](https://tt-rss.org)
 - **Main Repository:** [https://github.com/tt-rss/tt-rss](https://github.com/tt-rss/tt-rss)
 - **Discussions:** [https://github.com/tt-rss/tt-rss/discussions](https://github.com/tt-rss/tt-rss/discussions)
 - **Issues:** [https://github.com/tt-rss/tt-rss/issues](https://github.com/tt-rss/tt-rss/issues)

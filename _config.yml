@@ -4,7 +4,7 @@ description: >-
   Documentation for tt-rss, a free and open source web-based news feed reader
 remote_theme: just-the-docs/just-the-docs
 baseurl: ""
-url: "https://tt-rss.github.io"
+url: "https://tt-rss.org"
 
 # Just the Docs theme settings
 color_scheme: light
