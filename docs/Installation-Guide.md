@@ -86,9 +86,10 @@ HTTP_PORT=127.0.0.1:8280
 
 ### docker-compose.yml
 
->[!WARNING]
+{: .warning }
 > See [this FAQ entry](#i-got-the-updated-docker-compose-file-above-and-now-my-database-keeps-restarting)
 > if you're upgrading between PostgreSQL major versions (e.g. 15 to-17).
+
 {: .warning }
 > Regarding PostgreSQL 18:
 > * The `backups` container image currently includes `postgresql17-client`, meaning it won't be able to back up your DB if you use PostgreSQL 18.
