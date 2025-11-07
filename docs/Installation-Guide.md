@@ -32,6 +32,8 @@ Consider using an external [Patroni cluster](https://patroni.readthedocs.io/en/l
 
 Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` as you see fit, run `docker compose up -d`.
 
+If you want a little more verbose explanation, see [Docker tips and tricks](docs/docker-tips.md).
+
 ### .env
 
 ```ini
