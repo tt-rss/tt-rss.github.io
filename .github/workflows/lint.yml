@@ -28,9 +28,10 @@ jobs:
         uses: super-linter/super-linter/slim@v8
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # DEFAULT_BRANCH: main
           # Validate all files on push/workflow_dispatch, only changed files on PRs
-          # VALIDATE_ALL_CODEBASE: >-
-          #   ${{ github.event_name != 'pull_request' }}
-          # VALIDATE_MARKDOWN: true
-          # VALIDATE_YAML: true
+          VALIDATE_ALL_CODEBASE: >-
+            ${{ github.event_name != 'pull_request' }}
+          # VALIDATE_GITHUB_ACTIONS_ZIZMOR: true
+          VALIDATE_MARKDOWN: true
+          # VALIDATE_NATURAL_LANGUAGE: true
+          VALIDATE_YAML: true
