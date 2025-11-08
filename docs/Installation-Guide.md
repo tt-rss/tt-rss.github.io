@@ -32,7 +32,22 @@ Consider using an external [Patroni cluster](https://patroni.readthedocs.io/en/l
 
 Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` as you see fit, run `docker compose up -d`.
 
-If you want a little more verbose explanation, see [Docker tips and tricks](docs/docker-tips.md).
+## In more details
+
+1. Create a directory for your tt-rss installation. Do the rest in there.
+1. [Get the `.env` file](docs/Installation-Guide.md#.env) and edit it to suit your needs.
+1. Make sure you change all the password using something like `pwgen` to generate long and
+   complex ones.
+1. [Get the `docker-compose.yml` file](docs/Installation-Guide.md#docker-compose) and edit
+   it to suit your needs.
+1. Run `docker-compose up` to run within the current shell. Add the `-d` option for
+   detached so you can run it in the background: `docker-compose -d up`.
+1. [Optional] Run `lazydocker` so you can always see what is happening.
+   1. [Lazydocker](https://github.com/jesseduffield/lazydocker) is a nice little terminal
+      UI for both `docker` and `docker-compose`, written in Go with the `gocui` library.
+      This means that you can run it in an ssh session to see what your docker compose
+      installation is doing — or not.
+1. [Optional] Run lots of docker commands so you see what is happening. [Check the docker documentation](https://docs.docker.com/manuals/).
 
 ### .env
 
@@ -452,6 +467,10 @@ networks:
 If your service uses a non-standard (i.e. not 80 or-443) port, make an internal reverse proxy sidecar container for it.
 
 ### Backup and restore
+
+Backups are important as you will eventually lose your data due many a thing. It is better to have them rather than be sorry. Yes, even for a simple service like tt-rss.
+
+Additionally, you should download your data in `OPML` regularity and restore from backups from time to time — is quarterly too much?
 
 If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins,-etc.) once a week to a separate storage volume.
 
