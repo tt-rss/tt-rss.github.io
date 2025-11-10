@@ -80,7 +80,7 @@ are not supported.
 
 ## Methods
 
-### getApiLevel (since version:1.5.8, api level-1)
+### getApiLevel (since version:1.5.8, api level 1)
 
 Return an abstracted integer API version level, increased with each API
 functionality change. This is the proper way to detect host API
@@ -132,7 +132,7 @@ password parameters.
 
 ### logout
 
-Closes your login session. Returns either status-message <code>{"status":"OK"}</code> or an error (e.g.-<code>{"error":"NOT_LOGGED_IN"}</code>)
+Closes your login session. Returns either status message <code>{"status":"OK"}</code> or an error (e.g.-<code>{"error":"NOT_LOGGED_IN"}</code>)
 
 ### isLoggedIn
 
@@ -162,8 +162,7 @@ Parameters:
 - ``unread_only`` (bool) - only return feeds which have unread articles
 - ``limit`` (integer) - limit amount of feeds returned to this value
 - ``offset`` (integer) - skip this amount of feeds first
-- ``include_nested`` (bool) - include child categories (as Feed-objects
-    ``with is_cat set)`` **requires version:1.6.0**
+- ``include_nested`` (bool) - include child categories (as Feed objects with `is_cat` set) **requires version:1.6.0**
 
 Pagination:
 
@@ -179,7 +178,7 @@ Special category IDs are as follows:
 
 Added in version:1.5.0:
 
-- -3 All feeds, excluding virtual feeds (e.g. Labels and-such)
+- -3 All feeds, excluding virtual feeds (e.g. Labels and such)
 - -4 All feeds, including virtual feeds
 
 Known bug: Prior to version:1.5.0 passing null or 0 cat\_id to this
@@ -201,7 +200,7 @@ categories is returned and unread counters include counters for child
 categories.
 
 This should be used as a starting point, to display a root list of all
-(for backwards-compatibility) or topmost categories, use getFeeds to
+(for backwards compatibility) or topmost categories, use [`getFeeds`](#getFeeds) to
 traverse deeper.
 
 ### getHeadlines
@@ -210,11 +209,11 @@ Returns JSON-encoded list of headlines.
 
 Parameters:
 
-- ``feed_id`` (integer|string) - only output articles for this feed (supports string values to retrieve tag virtual feeds since API level 18, otherwise-integer)
-- ``limit`` (integer) - limits the amount of returned articles (see-below)
+- ``feed_id`` (integer|string) - only output articles for this feed (supports string values to retrieve tag virtual feeds since API level 18, otherwise integer)
+- ``limit`` (integer) - limits the amount of returned articles (see below)
 - ``skip`` (integer) - skip this amount of feeds first
 - ``filter`` (string) - currently unused (?)
-- ``is_cat`` (bool) - requested feed\_id is a category
+- ``is_cat`` (bool) - requested `feed_id` is a category
 - ``show_excerpt`` (bool) - include article excerpt in the output
 - ``show_content`` (bool) - include full article text in the output
 - ``view_mode`` (string = all\_articles, unread, adaptive,-marked,
@@ -230,24 +229,22 @@ Parameters:
 - ``sanitize`` (bool) - sanitize content or not **requires version:1.8**
     (default:-true)
 - ``force_update`` (bool) - try to update feed before showing headlines
-    **requires version:1.14 (api-9)** (default: false)
+    **requires version:1.14 (api 9)** (default: false)
 - ``has_sandbox`` (bool) - indicate support for sandboxing of iframe
     elements **<span class="10 api"></span>** (default: false)
 - ``include_header`` (bool) - adds status information when returning
     headlines, instead of array(articles) return value changes to
-    array(header,-array(articles)) (api-12)
+    array(header,-array(articles)) (api 12)
 
 Limit:
 
 Before **API level 6** maximum amount of returned headlines is capped at
 60, API 6 and above sets it to 200.
 
-This parameters might change in the future (supported since **API-level
-2**):
+These parameters might change in the future (supported since **API level 2**):
 
-- ``search`` (string) - search query (e.g. a list of-keywords)
-- ``search_mode`` (string) - all\_feeds, this\_feed (default), this\_cat
-    (category containing requested-feed)
+- ``search`` (string) - search query (e.g. a list of keywords)
+- ``search_mode`` (string) - `all_feeds`, `this_feed` (default), `this_cat` (category containing requested feed)
 - ``match_on`` (string) - ignored
 
 Special feed IDs are as follows:
@@ -271,13 +268,13 @@ Update information on specified articles.
 
 Parameters:
 
-- ``article_ids`` (comma-separated list of-integers) - article IDs to
+- ``article_ids`` (comma-separated list of integers) - article IDs to
     operate on
 - ``mode`` (integer) - type of operation to perform (0 - set to false, 1--
     set to true, 2 - toggle)
-- ``field`` (integer) - field to operate on (0 - starred, 1 - published, 2 - unread, 3 - article note **since api level-1**)
+- ``field`` (integer) - field to operate on (0 - starred, 1 - published, 2 - unread, 3 - article note **since api level 1**)
 - ``data`` (string) - optional data parameter when setting note field
-    (since **api level-1**)
+    (since **api level 1**)
 
 E.g. to set unread status of articles X and Y to false use the
 following:
@@ -312,9 +309,9 @@ Returns tt-rss configuration parameters:
 - ``icons_dir`` - path to icons on the server filesystem
 - ``icons_url`` - path to icons when requesting them over http
 - ``daemon_is_running`` - whether update daemon is running
-- ``num_feeds`` - amount of subscribed feeds (this can be used to-refresh
+- ``num_feeds`` - amount of subscribed feeds (this can be used to refresh
     feedlist when this amount changes)
-- ``custom_sort_types`` - map of plugin-provided article sort types (API-17+)
+- ``custom_sort_types`` - map of plugin-provided article sort types (API 17+)
 
 ### updateFeed
 
@@ -324,7 +321,7 @@ aborted by the HTTP server.
 
 - ``feed_id`` (integer) - ID of feed to update
 
-Returns status-message if the operation has been completed.
+Returns status message if the operation has been completed.
 
 ```json
 {"status":"OK"}
@@ -344,7 +341,7 @@ Returns preference value of specified key.
 
 Required version: version:1.4.3
 
-Tries to catchup (e.g. mark as-read) specified feed.
+Tries to catchup (e.g. mark as read) specified feed.
 
 Parameters:
 
@@ -352,7 +349,7 @@ Parameters:
 - ``is_cat`` (boolean) - true if the specified feed\_id is a category
 - ``mode`` (string) - optional: one of `all`, `1day`, `1week`, `2week`. defaults to `all`. **since api level 15**.
 
-Returns status-message if the operation has been completed.
+Returns status message if the operation has been completed.
 
 ```json
 {"status":"OK"}
@@ -379,7 +376,7 @@ to “flc”):
 Several global counters are returned as well, those can’t be disabled
 with output\_mode.
 
-### getLabels (since API level-1)
+### getLabels (since API level 1)
 
 Returns list of configured labels, as an array of label objects:
 
@@ -402,7 +399,7 @@ Parameters:
 
 * ``article_id`` (int) - set “checked” to true if specified article id has returned label.
 
-### setArticleLabel (since API level-1)
+### setArticleLabel (since API level 1)
 
 Assigns article\_ids to specified label.
 
@@ -413,7 +410,7 @@ Parameters:
 * ``assign`` (boolean) - assign or remove label
 
 Note: Up until version:1.15 setArticleLabel() clears the label cache for
-the specified articles. Make sure to regenerate it (e.g. by calling-API
+the specified articles. Make sure to regenerate it (e.g. by calling API
 method getLabels() for the respecting articles) when you’re using
 methods which don’t do that by themselves (e.g.-getHeadlines())
 otherwise getHeadlines() will not return labels for modified articles.

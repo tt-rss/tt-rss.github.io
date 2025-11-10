@@ -14,7 +14,7 @@ nav_order: 2
 
 ---
 
-The main (and-recommended) way to run tt-rss is under Docker.
+The main (and recommended) way to run tt-rss is under Docker.
 
 Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and-`linux/arm64`) and published
 ([via GitHub-Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
@@ -58,7 +58,7 @@ Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` 
 # 10 - admin
 #ADMIN_USER_ACCESS_LEVEL=
 
-# Auto create another user (in addition to built-in-admin) unless it already exists.
+# Auto create another user (in addition to built-in admin) unless it already exists.
 #AUTO_CREATE_USER=
 #AUTO_CREATE_USER_PASS=
 #AUTO_CREATE_USER_ACCESS_LEVEL=0
@@ -88,7 +88,7 @@ HTTP_PORT=127.0.0.1:8280
 
 {: .warning }
 > See [this FAQ entry](#i-got-the-updated-docker-compose-file-above-and-now-my-database-keeps-restarting)
-> if you're upgrading between PostgreSQL major versions (e.g. 15 to-17).
+> if you're upgrading between PostgreSQL major versions (e.g. 15 to 17).
 
 {: .warning }
 > Regarding PostgreSQL 18:
@@ -206,10 +206,10 @@ services:
 ```
 
 `BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version info properly.
-If that doesn't work for you (no-BuildKit?) you'll have to resort to terrible hacks.
+If that doesn't work for you (no BuildKit?) you'll have to resort to terrible hacks.
 
 {: .warning }
-> Self-built images are not necessarily supported (i.e. best effort and/or community-support).
+> Self-built images are not necessarily supported (i.e. best effort and/or community support).
 
 ### I got the updated Docker Compose file above and now my database keeps restarting
 
@@ -222,13 +222,13 @@ Using the aforementioned example, you could do one of the following:
 
 1. Replace `postgres:15-alpine` with `postgres:12-alpine` in `docker-compose.yml` (or use `docker-compose.override.yml`, see-below) and keep using PG 12
 2. Use [this DB container](https://github.com/pgautoupgrade/docker-pgautoupgrade) which would automatically upgrade the database
-3. Migrate the data manually using `pg_dump` and `pg_restore` (somewhat complicated if you haven't done it-before)
+3. Migrate the data manually using `pg_dump` and `pg_restore` (somewhat complicated if you haven't done it before)
 
-### I'm using docker-compose.override.yml and now I'm getting schema update (and-other) strange issues
+### I'm using docker-compose.override.yml and now I'm getting schema update (and other) strange issues
 
 Alternatively, you've changed something related to `/var/www/html/tt-rss` in `docker-compose.yml`.
 
-Your Docker setup is messed up for some reason, so tt-rss can't update itself to the persistent storage location on startup (this is just an example of one issue, there could be many-others).
+Your Docker setup is messed up for some reason, so tt-rss can't update itself to the persistent storage location on startup (this is just an example of one issue, there could be many others).
 
 Consider undoing any recent changes, looking up error messages, etc.
 
@@ -433,9 +433,9 @@ Note that `proxy_pass` in this example points to container website root.
   </IfModule>
 ```
 
-### I have internal web services tt-rss is complaining about (URL is invalid, loopback address, disallowed-ports)
+### I have internal web services tt-rss is complaining about (URL is invalid, loopback address, disallowed ports)
 
-Put your local services on the same Docker network with tt-rss, then access them by service (=-host) names, i.e. `http://rss-bridge/`.
+Put your local services on the same Docker network with tt-rss, then access them by service (=host) names, i.e. `http://rss-bridge/`.
 
 ```yml
 services:
@@ -447,7 +447,7 @@ networks:
       name: ttrss-docker_default
 ```
 
-If your service uses a non-standard (i.e. not 80 or-443) port, make an internal reverse proxy sidecar container for it.
+If your service uses a non-standard (i.e. not 80 or 443) port, make an internal reverse proxy sidecar container for it.
 
 ### Backup and restore
 
@@ -458,7 +458,7 @@ If you value your data, you should invest your time into setting up something li
 
 #### Manually taking a backup
 
-To run [`.docker/app/backup.sh`](https://github.com/tt-rss/tt-rss/blob/main/.docker/app/backup.sh) (the backup script that executes-weekly):
+To run [`.docker/app/backup.sh`](https://github.com/tt-rss/tt-rss/blob/main/.docker/app/backup.sh) (the backup script that executes weekly):
 
 `docker compose exec backups /etc/periodic/weekly/backup`
 
@@ -481,7 +481,7 @@ The process to restore the database from a `backups` container backup might look
 
 1. Enter `backups` container shell: `docker compose exec backups /bin/sh`
 2. Inside the container, locate and choose the backup file: `ls -t /backups/*.sql.gz`
-3. Clear database (**THIS WOULD DELETE EVERYTHING IN THE-DB**): `psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME -e -c "drop schema public cascade; create schema public"`
+3. Clear database (**THIS WOULD DELETE EVERYTHING IN THE DB**): `psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME -e -c "drop schema public cascade; create schema public"`
 3. Restore the backup: `zcat /backups/ttrss-backup-yyyymmdd.sql.gz | psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME`
 
 ### How do I use custom certificates?

@@ -6,7 +6,7 @@ nav_order: 10
 
 Tiny Tiny RSS supports many kinds of plugins: social plugins which share
 articles to various sites, article filter plugins which mangle feed-provided
-data on import (for example, inlining images or extracting full article-text
+data on import (for example, inlining images or extracting full article text
 using Readability), hotkey plugins which alter the way keyboard shortcuts work,
 etc.
 
@@ -45,7 +45,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 >
 {: .note }
 > Third party plugins may be unmaintained and incompatible with newer tt-rss
-> code (especially those from the old-forums). Please report plugin-related
+> code (especially those from the old forums). Please report plugin-related
 > problems to their developers.
 
 ### Sharing plugins
@@ -76,7 +76,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 
 <https://github.com/feediron/ttrss_plugin-feediron>
 
-#### A simple plugin to assist in the display of images from NASA's Astronomy Picture of the Day feed in TT-RSS
+#### A simple plugin to assist in the display of images from NASA's Astronomy Picture of the Day feed in tt-rss
 
 <https://github.com/joshp23/TTRSS-APOD-Fix>
 

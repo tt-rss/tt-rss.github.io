@@ -18,7 +18,7 @@ is sorted by score) and alters the way article is displayed:
 |-------|------------------|
 | `<-500` | Score indicator points down, article is automatically marked as read |
 | `<-100` | Score indicator points down |
-| `<0`    | Score indicator points down, 1.5.0: article is excluded from Fresh feed and (as of 1.5.10 also excluded from email-digest) |
+| `<0`    | Score indicator points down, 1.5.0: article is excluded from Fresh feed and (as of 1.5.10 also excluded from email digest) |
 |   `0`   | Display normally |
 | `>0`    | Score indicator points up |
 | `>500`  | Score indicator points up |

@@ -9,13 +9,13 @@ nav_order: 30
 
 ### I want to check how tt-rss renders my feed / the feed I'm trying to use is parsed incorrectly
 
-tt-rss expects valid XML feed data which is parsed using libxml. Any XML parse errors, should you feel that libxml is misbehaving (which is-unlikely), should be reported to libxml developers. We don't add hacks for invalid XML on tt-rss side.
+tt-rss expects valid XML feed data which is parsed using libxml. Any XML parse errors, should you feel that libxml is misbehaving (which is unlikely), should be reported to libxml developers. We don't add hacks for invalid XML on tt-rss side.
 
 Plugins may affect parsing, consider disabling any plugins before investigating XML-related issues.
 
 ### I managed to lock myself out of tt-rss
 
-This assumes you can't simply reset your password via email (login form - forgot my-password).
+This assumes you can't simply reset your password via email (login form - forgot my password).
 
 If you have OTP (2FA) enabled and know your password but can't provide an OTP token, you can disable OTP via SQL:
 
@@ -48,7 +48,7 @@ Alternatively, you can either temporarily disable `auth_remote` (replace it with
 ### UI is missing CSS or is otherwise visibly broken
 
 - Try opening tt-rss using safe mode, clean browser profile, or an incognito
-  window (a different browser would also-work)
+  window (a different browser would also work)
 - Unless you're using SSL, try a different network connection in case your ISP is MITMing you
 - Some values of ``Content-Security-Policy`` header may break tt-rss, if you
   have this header set in your httpd config, try disabling it temporarily
@@ -59,7 +59,7 @@ Alternatively, you can either temporarily disable `auth_remote` (replace it with
 
 ### Third party theme or plugin broke after update making the UI unusable
 
-Log in to tt-rss in safe mode (use an incognito window if you can't get to login-page).
+Log in to tt-rss in safe mode (use an incognito window if you can't get to login page).
 
 ### I want to limit height of images to something more manageable
 
@@ -76,7 +76,7 @@ body.ttrss_main .cdm .content img, body.ttrss_main .cdm .content video {
 
 ### Feeds stop updating for users who rarely login
 
-This is controlled by a global configuration setting. You can override (or-disable) it through environment or `config.php` by setting `TTRSS_DAEMON_UPDATE_LOGIN_LIMIT` to `0`.
+This is controlled by a global configuration setting. You can override (or disable) it through environment or `config.php` by setting `TTRSS_DAEMON_UPDATE_LOGIN_LIMIT` to `0`.
 
 Note that this also effectively disables purging of articles stored for inactive users.
 
@@ -86,11 +86,11 @@ Purging is performed on successful feed update, no updates = no purging.
 
 Starred articles are never purged, unread articles are purged if relevant preference is enabled.
 
-Purging is done based on import timestamp, internal to tt-rss. It may be different from article date specified by the feed (i.e. article says it was published on 1970/01/01 but it was imported-today). You can see import timestamp if you hover over date in tt-rss web UI.
+Purging is done based on import timestamp, internal to tt-rss. It may be different from article date specified by the feed (i.e. article says it was published on 1970/01/01 but it was imported today). You can see import timestamp if you hover over date in tt-rss web UI.
 
 Import date is bumped every time article is encountered in the feed, otherwise it will get purged and reimported again on every feed refresh, creating duplicates.
 
-When in doubt, use Feed debugger (`f D` on a-feed) to see additional purging-related information:
+When in doubt, use Feed debugger (`f D` on a feed) to see additional purging-related information:
 
 ```text
 [11:08:10/6783] purging feed...
@@ -117,7 +117,7 @@ Find and delete daemon lock file in <code>LOCK_DIRECTORY</code>. Usually, it's <
 https://example.com/tt-rss/public.php?op=bookmarklets--subscribe&feed_url=%s
 ```
 
-If feed URL is empty (or not-given) tt-rss will display feed subscription dialog.
+If feed URL is empty (or not given) tt-rss will display feed subscription dialog.
 
 ### I need to get the number of unread articles for specific user
 

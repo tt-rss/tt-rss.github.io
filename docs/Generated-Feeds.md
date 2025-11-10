@@ -4,7 +4,7 @@ title: Generated Feeds
 nav_order: 45
 ---
 
-You can generate a feed (in Atom or JSON-format) for almost anything displayed
+You can generate a feed (in Atom or JSON format) for almost anything displayed
 in headlines buffer (e.g. actual feeds, Labels, Categories,-etc.) by clicking
 this icon:
 
@@ -59,7 +59,7 @@ Feed ID values less than `-10` are considered Labels.
 
 - ``0`` - Uncategorized
 - ``-1`` - Special category (includes Starred, Published,-etc.)
-- ``-2`` - Labels category (includes your-labels)
+- ``-2`` - Labels category (includes your labels)
 
 ### View mode values
 
@@ -68,7 +68,7 @@ generated feeds.
 
 - <code>adaptive</code> - shows unread articles only when they are
     unread articles, shows everything otherwise
-- <code>marked</code> (this means-starred), <code>has\_note</code>,
+- <code>marked</code> (this means starred), <code>has\_note</code>,
     <code>published</code>, <code>unread</code>,
     <code>unread\_first</code> - should be self explanatory
 
