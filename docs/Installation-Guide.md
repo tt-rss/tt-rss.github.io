@@ -30,6 +30,22 @@ Consider using an external [Patroni cluster](https://patroni.readthedocs.io/en/l
 
 Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` as you see fit, run `docker compose up -d`.
 
+## In more details
+
+1. Create a directory for your tt-rss installation. Do the rest in there.
+1. [Get the `.env` file](docs/Installation-Guide.md#.env) and edit it to suit your needs.
+1. Make sure you change all the password using something like `pwgen` to generate long and
+   complex ones.
+1. [Get the `docker-compose.yml` file](docs/Installation-Guide.md#docker-compose) and edit
+   it to suit your needs.
+1. Run `docker-compose up -d` to run within the current shell. Note that the `-d` will detach the docker containers so when you close your shell, docker will still run.
+1. [Optional] Run `lazydocker` so you can always see what is happening.
+   1. [Lazydocker](https://github.com/jesseduffield/lazydocker) is a nice little terminal
+      UI for both `docker` and `docker-compose`, written in Go with the `gocui` library.
+      This means that you can run it in an SSH session to see what your Docker Compose
+      installation is doing — or not.
+1. [Optional] Run lots of Docker commands so you see what is happening. [Check the docker documentation](https://docs.docker.com/manuals/).
+
 ### .env
 
 ```ini
@@ -449,6 +465,10 @@ If your service uses a non-standard (i.e. not 80 or 443) port, make an internal 
 
 ### Backup and restore
 
+Backups are important as you will eventually lose your data due many a thing. It is better to have them rather than be sorry. Yes, even for a simple service like tt-rss.
+
+Restoring from backups from time to time (is quarterly too much?) is another thing you should get used to. There is no point in having backups if you cannot restore from them.
+
 If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins, etc.) once a week to a separate storage volume.
 
 Note that this container is included as a safety net for people who wouldn't bother with backups otherwise.
@@ -481,6 +501,16 @@ The process to restore the database from a `backups` container backup might look
 2. Inside the container, locate and choose the backup file: `ls -t /backups/*.sql.gz`
 3. Clear database (**THIS WOULD DELETE EVERYTHING IN THE DB**): `psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME -e -c "drop schema public cascade; create schema public"`
 3. Restore the backup: `zcat /backups/ttrss-backup-yyyymmdd.sql.gz | psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME`
+
+#### OPML
+
+Optionally, you could download your data in `OPML` regularity. It is not a full backup, can be useful nonetheless.
+
+### Update tt-rss
+
+When you see that `tt-rss` needs an update, you can run the following docker command: `docker restart ttrss_app_1`.
+
+You can check that the container app is called `ttrss_app_1` by using `docker ps`.
 
 ### How do I use custom certificates?
 
