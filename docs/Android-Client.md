@@ -16,15 +16,15 @@ parent: Legacy
 
 ## Screenshots
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135136.webp" width="120" align="left" alt="Android app main feed view">](images/tt-rss-android/Screenshot_20250509_135136.webp)
+[<img src="../images/tt-rss-android/Screenshot_20250509_135136.webp" width="120" align="left" alt="Android app main feed view">](../images/tt-rss-android/Screenshot_20250509_135136.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135154.webp" width="120" align="left" alt="Android app article list">](images/tt-rss-android/Screenshot_20250509_135154.webp)
+[<img src="../images/tt-rss-android/Screenshot_20250509_135154.webp" width="120" align="left" alt="Android app article list">](../images/tt-rss-android/Screenshot_20250509_135154.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135217.webp" width="120" align="left" alt="Android app article view">](images/tt-rss-android/Screenshot_20250509_135217.webp)
+[<img src="../images/tt-rss-android/Screenshot_20250509_135217.webp" width="120" align="left" alt="Android app article view">](../images/tt-rss-android/Screenshot_20250509_135217.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135426.webp" width="120" align="left" alt="Android app settings">](images/tt-rss-android/Screenshot_20250509_135426.webp)
+[<img src="../images/tt-rss-android/Screenshot_20250509_135426.webp" width="120" align="left" alt="Android app settings">](../images/tt-rss-android/Screenshot_20250509_135426.webp)
 
-[<img src="images/tt-rss-android/Screenshot_20250509_135438.webp" width="120" alt="Android app preferences">](images/tt-rss-android/Screenshot_20250509_135438.webp)
+[<img src="../images/tt-rss-android/Screenshot_20250509_135438.webp" width="120" alt="Android app preferences">](../images/tt-rss-android/Screenshot_20250509_135438.webp)
 
 ## Download
 
