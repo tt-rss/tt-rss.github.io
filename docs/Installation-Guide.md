@@ -4,8 +4,6 @@ title: Installation Guide
 nav_order: 2
 ---
 
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -180,8 +178,8 @@ volumes:
 
 ### Your Docker images won't run on X
 
-If you're using an OS or architecture that isn't currently supported you'll likely need to
-build your own Docker images by using an override and running `docker compose build`.
+If you're using an OS or architecture that isn't currently supported (i.e. something other than `linux/amd64` and `linux/arm64`),
+you'll likely need to build your own Docker images by using an override and running `docker compose build`.
 
 ```yaml
 # docker-compose.override.yml
@@ -263,7 +261,7 @@ Look at [Global-Config](Global-Config.md) for more information.
 
 Some options, but not all, are mentioned in `.env-dist`. You can see all available options in the [Dockerfile](https://github.com/tt-rss/tt-rss/blob/main/.docker/app/Dockerfile).
 
-### How do I customize the YML without committing my changes to git?
+### How do I customize the YAML without committing my changes to git?
 
 You can use [docker-compose.override.yml](https://docs.docker.com/compose/extends/). For example, customize `db` to use a different `postgres` image:
 
@@ -507,7 +505,7 @@ You'll need to set several mandatory environment values to the container running
 
 ### Where's the Helm chart?
 
-You'll have to make your own.
+There isn't an official Helm chart.
 
 ### I'm using Podman, and
 
