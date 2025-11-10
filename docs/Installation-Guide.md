@@ -15,9 +15,9 @@ nav_order: 2
 The main (and recommended) way to run tt-rss is under Docker.
 
 Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and `linux/arm64`) and published
-([via GitHub-Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
+([via GitHub Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
 * Docker Hub (as [supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
-* GitHub Container Registry (as-[ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
+* GitHub Container Registry (as [ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
   and [ghcr.io/tt-rss/tt-rss-web-nginx](https://github.com/orgs/tt-rss/packages/container/package/tt-rss-web-nginx)).
 
 {: .warning }
@@ -218,7 +218,7 @@ We'll use the following error message as an example of what you might see in the
 Official PostgreSQL containers have no support for migrating data between major versions.
 Using the aforementioned example, you could do one of the following:
 
-1. Replace `postgres:15-alpine` with `postgres:12-alpine` in `docker-compose.yml` (or use `docker-compose.override.yml`, see-below) and keep using PG 12
+1. Replace `postgres:15-alpine` with `postgres:12-alpine` in `docker-compose.yml` (or use `docker-compose.override.yml`, see below) and keep using PG 12
 2. Use [this DB container](https://github.com/pgautoupgrade/docker-pgautoupgrade) which would automatically upgrade the database
 3. Migrate the data manually using `pg_dump` and `pg_restore` (somewhat complicated if you haven't done it before)
 
@@ -243,7 +243,7 @@ Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH` (if you have it set
 
 ### How do I apply configuration options?
 
-There are two sets of options you can change through the environment: those specific to tt-rss (those are prefixed with-`TTRSS_`) and those affecting container behavior.
+There are two sets of options you can change through the environment: those specific to tt-rss (those are prefixed with `TTRSS_`) and those affecting container behavior.
 
 #### Options specific to tt-rss
 
@@ -357,7 +357,7 @@ PING app (172.18.0.3): 56 data bytes
 round-trip min/avg/max = 0.128/0.159/0.206 ms
 ```
 
-Containers communicate via DNS names assigned by Docker based on service names defined in `docker-compose.yml`. This means that services (specifically,-`app`) and Docker DNS service should be functional.
+Containers communicate via DNS names assigned by Docker based on service names defined in `docker-compose.yml`. This means that services (specifically `app`) and Docker DNS service should be functional.
 
 Similar issues may be also caused by Docker `iptables` functionality either being disabled or conflicting with `nftables`.
 
@@ -449,7 +449,7 @@ If your service uses a non-standard (i.e. not 80 or 443) port, make an internal 
 
 ### Backup and restore
 
-If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins,-etc.) once a week to a separate storage volume.
+If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins, etc.) once a week to a separate storage volume.
 
 Note that this container is included as a safety net for people who wouldn't bother with backups otherwise.
 If you value your data, you should invest your time into setting up something like [WAL-G](https://github.com/wal-g/wal-g) instead.
@@ -460,7 +460,7 @@ To run [`.docker/app/backup.sh`](https://github.com/tt-rss/tt-rss/blob/main/.doc
 
 `docker compose exec backups /etc/periodic/weekly/backup`
 
-Alternatively, if you want to initiate backups from the host (or if you're using PostgreSQL 18+, currently incompatible with the `backup`-container) you can do something like this:
+Alternatively, if you want to initiate backups from the host (or if you're using PostgreSQL 18+, currently incompatible with the `backup` container) you can do something like this:
 
 ```sh
 source .env
