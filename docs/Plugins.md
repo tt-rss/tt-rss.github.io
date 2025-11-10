@@ -63,18 +63,22 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 {: .no_toc }
 
 #### A Tiny Tiny RSS plugin to post to a Wallabag v2 instance
+{: .no_toc }
 
 <https://github.com/joshp23/ttrss-to-wallabag-v2>
 
 #### A plugin for Tiny Tiny RSS, to shorten urls via Yourls
+{: .no_toc }
 
 <https://github.com/joshp23/tt-rss-yourls>
 
 #### Adds support for sharing links with Shaarli to tt-rss
+{: .no_toc }
 
 <https://github.com/joshp23/tt-rss-shaarli>
 
 #### Convert DOI and other links to Sci-Hub links in TT-Rss
+{: .no_toc }
 
 <https://github.com/joshp23/ttrss-to-Sci-Hub>
 
@@ -82,14 +86,17 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 {: .no_toc }
 
 #### Enable embedded videos in feeds - videoframes
+{: .no_toc }
 
 <https://github.com/tribut/ttrss-videoframes>
 
 #### Configurable plugin to replace article stub with content from the linked URL's page
+{: .no_toc }
 
 <https://github.com/feediron/ttrss_plugin-feediron>
 
 #### A simple plugin to assist in the display of images from NASA's Astronomy Picture of the Day feed in tt-rss
+{: .no_toc }
 
 <https://github.com/joshp23/TTRSS-APOD-Fix>
 
@@ -97,14 +104,17 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 {: .no_toc }
 
 #### Comic plugin GU Comics, Married to the sea & Toothpaste for dinner
+{: .no_toc }
 
 <https://github.com/tribut/ttrss-comics>
 
 #### Lint/tidy plugin to repair invalid feeds
+{: .no_toc }
 
 <https://github.com/Churten/tt-rss-ff-xmllint>
 
 #### Embed content from Tapastic rss streams
+{: .no_toc }
 
 <https://github.com/ldidry/af_tapastic>
 
@@ -112,12 +122,14 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 {: .no_toc }
 
 #### FreshRSS / Google Reader API Support
+{: .no_toc }
 
 Use any RSS app or client that supports FreshRSS or the Google Reader API.
 
 <https://github.com/eric-pierce/freshapi>
 
 #### Fever API emulator
+{: .no_toc }
 
 Simulates the Fever API for reading RSS Feeds with your Fever clients.
 
@@ -127,14 +139,17 @@ Simulates the Fever API for reading RSS Feeds with your Fever clients.
 {: .no_toc }
 
 #### Generate QR codes from article links, with xhr support and no disk cache
+{: .no_toc }
 
 <https://github.com/GregThib/ttrss-qrcodegen>
 
 #### Send XMPP notifications via Prosody mod_post_msg
+{: .no_toc }
 
 <https://github.com/joshp23/ttrss-notify-xmpp-prosody>
 
 #### Plugins for alternative navigation and night mode
+{: .no_toc }
 
 Set of plugins to (1) use cursor keys for a tree-style article navigation; (2) change to a minimal set of hotkeys; (3) toggle night mode for custom themes; (4) change the sort order of unread articles to Oldest first.
 
