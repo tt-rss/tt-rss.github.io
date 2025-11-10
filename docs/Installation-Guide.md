@@ -16,9 +16,9 @@ The main (and recommended) way to run tt-rss is under Docker.
 
 Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and `linux/arm64`) and published
 ([via GitHub Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
-* Docker Hub (as [supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
+* Docker Hub (as [supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/))
 * GitHub Container Registry (as [ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
-  and [ghcr.io/tt-rss/tt-rss-web-nginx](https://github.com/orgs/tt-rss/packages/container/package/tt-rss-web-nginx)).
+  and [ghcr.io/tt-rss/tt-rss-web-nginx](https://github.com/orgs/tt-rss/packages/container/package/tt-rss-web-nginx))
 
 {: .warning }
 > Podman is not Docker. Please don't report issues related to running tt-rss when using Podman or Podman Compose.
@@ -28,23 +28,25 @@ Consider using an external [Patroni cluster](https://patroni.readthedocs.io/en/l
 
 ## TL;DR
 
-Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` as you see fit, run `docker compose up -d`.
+Place [`.env`](#env) and [`docker-compose.yml`](#docker-composeyml) (contents below) together in a directory, edit `.env` as you see fit, and run `docker compose up -d`.
 
-## In more details
+## In more detail
 
-1. Create a directory for your tt-rss installation. Do the rest in there.
-1. [Get the `.env` file](docs/Installation-Guide.md#.env) and edit it to suit your needs.
-1. Make sure you change all the password using something like `pwgen` to generate long and
-   complex ones.
-1. [Get the `docker-compose.yml` file](docs/Installation-Guide.md#docker-compose) and edit
-   it to suit your needs.
-1. Run `docker-compose up -d` to run within the current shell. Note that the `-d` will detach the docker containers so when you close your shell, docker will still run.
-1. [Optional] Run `lazydocker` so you can always see what is happening.
-   1. [Lazydocker](https://github.com/jesseduffield/lazydocker) is a nice little terminal
-      UI for both `docker` and `docker-compose`, written in Go with the `gocui` library.
-      This means that you can run it in an SSH session to see what your Docker Compose
-      installation is doing — or not.
-1. [Optional] Run lots of Docker commands so you see what is happening. [Check the docker documentation](https://docs.docker.com/manuals/).
+1. Create a directory for your tt-rss installation. Do the remaining steps in there.
+2. Create a `.env` file using [`.env`](#env) as a starting point; edit it to suit your needs (e.g. adjusting `HTTP_PORT`).
+  * Consider changing password/secret environment variables to something you're comfortable with (e.g. `pwgen`-generated values).
+4. Create a `docker-compose.yml` file using [`docker-compose.yml`](#docker-composeyml) as a starting point; edit it to suit your needs
+   (e.g. enabling the `backups` container, using the `ghcr.io` images, using a newer `postgres` image, etc.).
+5. Run [`docker compose up -d`](https://docs.docker.com/reference/cli/docker/compose/up/) to bring up the environment.
+  * Note that the `-d` will result in the containers running in the background, which is generally what you want.
+6. Review containers logs and states.  Some typical ways this may be done include:
+  * Running commands like [`docker compose ps`](https://docs.docker.com/reference/cli/docker/compose/ps/) and [`docker compose logs`](https://docs.docker.com/reference/cli/docker/compose/logs/)
+  * Using a third-party tool like [`lazydocker`](https://github.com/jesseduffield/lazydocker) (a terminal UI for Docker and Docker Compose).
+7. Access tt-rss in your browser.
+  * The URL to use depends upon how you set things up, but assuming you kept `HTTP_PORT=127.0.0.1:8280` in your `.env` file and are on the same system
+    as tt-rss, you'd use <http://127.0.0.1:8280/tt-rss>.
+8. Log in as `admin` or (if you enabled the related environment variables) the auto-created user.
+  * See comments in [`.env`](#env) regarding the password(s).
 
 ### .env
 
@@ -192,6 +194,14 @@ volumes:
 
 ## FAQ
 
+### How do I update tt-rss?
+
+When you see that tt-rss needs an update, just pull the latest image/code.  How this is done depends upon your environment, but typical ways to accomplish this are:
+* Docker (generally in the directory where you placed `docker-compose.yml`): `docker compose pull && docker compose up -d`
+* Git (from your tt-rss directory): `git pull`
+
+If a tt-rss database upgrade is required you'll be redirected to a special screen in the UI.
+
 ### Your Docker images won't run on X
 
 If you're using an OS or architecture that isn't currently supported (i.e. something other than `linux/amd64` and `linux/arm64`),
@@ -240,11 +250,12 @@ Using the aforementioned example, you could do one of the following:
 
 ### I'm using docker-compose.override.yml and now I'm getting schema update (and other) strange issues
 
-Alternatively, you've changed something related to `/var/www/html/tt-rss` in `docker-compose.yml`.
+You've might've changed something related to `/var/www/html/tt-rss` in `docker-compose.yml`.
 
-Your Docker setup is messed up for some reason, so tt-rss can't update itself to the persistent storage location on startup (this is just an example of one issue, there could be many others).
+Your Docker setup is messed up for some reason, so tt-rss can't update itself to the persistent storage location on startup
+(this is just an example of one issue, there could be many others).
 
-Consider undoing any recent changes, looking up error messages, etc.
+Consider undoing any recent changes, searching for error messages, etc.
 
 ### How do I make it run without /tt-rss/ in the URL, i.e. at website root?
 
@@ -259,14 +270,14 @@ Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH` (if you have it set
 
 ### How do I apply configuration options?
 
-There are two sets of options you can change through the environment: those specific to tt-rss (those are prefixed with `TTRSS_`) and those affecting container behavior.
+There are two sets of options you can change through the environment: those specific to tt-rss (which are prefixed with `TTRSS_`) and those affecting container behavior.
 
 #### Options specific to tt-rss
 
 For example, to set tt-rss global option `SELF_URL_PATH`, add the following to `.env`:
 
 ```ini
-TTRSS_SELF_URL_PATH=http://example.com/tt-rss
+TTRSS_SELF_URL_PATH=https://example.com/tt-rss
 ```
 
 Don't use quotes around values. Note the prefix (`TTRSS_`) before the value.
@@ -449,7 +460,7 @@ Note that `proxy_pass` in this example points to container website root.
 
 ### I have internal web services tt-rss is complaining about (URL is invalid, loopback address, disallowed ports)
 
-Put your local services on the same Docker network with tt-rss, then access them by service (=host) names, i.e. `http://rss-bridge/`.
+Put your local services on the same Docker network with tt-rss, then access them by service (i.e. host) names, i.e. `http://rss-bridge/`.
 
 ```yml
 services:
@@ -461,18 +472,18 @@ networks:
       name: ttrss-docker_default
 ```
 
-If your service uses a non-standard (i.e. not 80 or 443) port, make an internal reverse proxy sidecar container for it.
+If your service uses a non-standard (i.e. not `80` or `443`) port, make an internal reverse proxy sidecar container for it.
 
 ### Backup and restore
 
-Backups are important as you will eventually lose your data due many a thing. It is better to have them rather than be sorry. Yes, even for a simple service like tt-rss.
+It's highly recommended that you back up your data.  If your tt-rss is particularly important to you, also consider validating the backup artifacts by
+using them to restore to a parallel environment.
 
-Restoring from backups from time to time (is quarterly too much?) is another thing you should get used to. There is no point in having backups if you cannot restore from them.
+If you have the `backups` container enabled, the default configuration takes automatic backups (database, local plugins, etc.) once a week to a separate storage volume.
 
-If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins, etc.) once a week to a separate storage volume.
-
-Note that this container is included as a safety net for people who wouldn't bother with backups otherwise.
-If you value your data, you should invest your time into setting up something like [WAL-G](https://github.com/wal-g/wal-g) instead.
+{: .note }
+> The `backups` container is included as a safety net for people who wouldn't otherwise bother with backups.
+> For a more robust database backup/restore solution, consider setting up something like [WAL-G](https://github.com/wal-g/wal-g).
 
 #### Manually taking a backup
 
@@ -504,13 +515,12 @@ The process to restore the database from a `backups` container backup might look
 
 #### OPML
 
-Optionally, you could download your data in `OPML` regularity. It is not a full backup, can be useful nonetheless.
+As an additional, **but incomplete**, form of backup, you might also wish to periodically export a subset of your tt-rss user data as OPML.
+This may be done in `Preferences --> Feeds --> OPML` or via the CLI with a command like `update.php --opml-export:USERNAME:FILENAME`.
 
-### Update tt-rss
-
-When you see that `tt-rss` needs an update, you can run the following docker command: `docker restart ttrss_app_1`.
-
-You can check that the container app is called `ttrss_app_1` by using `docker ps`.
+{: .warning }
+> OPML exports are not a complete backup.
+> They only include information about one user's categories, feeds (configuration only), and (optionally) tt-rss settings (e.g. preferences, labels, filters).
 
 ### How do I use custom certificates?
 
