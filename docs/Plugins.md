@@ -4,6 +4,14 @@ title: Plugins
 parent: Features
 ---
 
+## Table of contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
+### About plugins
+
 Tiny Tiny RSS supports many kinds of plugins: social plugins which share
 articles to various sites, article filter plugins which mangle feed-provided
 data on import (for example, inlining images or extracting full article text
@@ -13,13 +21,13 @@ etc.
 There are two kinds of plugins: user and system. User plugins are enabled in
 `Preferences` &rarr; `Plugins`. System plugins require adding them to a [global
 configuration](Global-Config) directive <code>PLUGINS</code> which is a
-comma-separated list of enabled system plugins, i.e.
+comma-separated list of enabled system plugins, e.g.
 
 ```js
 putenv('TTRSS_PLUGINS=auth_internal, other_plugin');
 ```
 
-System plugins are always enabled for all users. If multiple search plugins are loaded, only the first one is used
+System plugins are always enabled for all users. If multiple search plugins are loaded, only the first one is used.
 
 If you are interested in making plugins, see [Making-Plugins](Making-Plugins),
 <https://github.com/topics/tt-rss-plugin>,
