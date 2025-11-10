@@ -37,8 +37,9 @@ final matching.
 all rules match.
 - Regular expressions may be matched against several article fields, such
 as, title, content, author, etc.
-- Do not include delimiters (e.g. <code>/</code>) when writing regular
-expressions.
+
+{: .warning }
+> Do not include delimiters (e.g. <code>/</code>) when writing regular expressions.
 
 ### Matching articles and applying actions
 

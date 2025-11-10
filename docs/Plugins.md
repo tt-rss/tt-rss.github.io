@@ -42,11 +42,14 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 
 {: .warning }
 > We're not responsible for third party plugins. Use at your own risk.
->
+
 {: .note }
-> Third party plugins may be unmaintained and incompatible with newer tt-rss
-> code (especially those from the old forums). Please report plugin-related
-> problems to their developers.
+> Third-party plugins may be unmaintained and incompatible with newer tt-rss
+> code. Please report plugin-related problems to their developers.
+
+{: .note }
+> This list is old ([related issue](https://github.com/tt-rss/tt-rss.github.io/issues/6)).
+> Consider discovering plugins via alternate methods (e.g. <https://github.com/topics/tt-rss-plugin>, <https://github.com/topics/ttrss-plugins>, etc.).
 
 ### Sharing plugins
 
@@ -92,7 +95,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 
 #### Embed content from Tapastic rss streams
 
-<https://github.com/ldidry/af_tapastic.git>
+<https://github.com/ldidry/af_tapastic>
 
 ### API plugins
 
