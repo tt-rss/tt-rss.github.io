@@ -200,7 +200,7 @@ categories is returned and unread counters include counters for child
 categories.
 
 This should be used as a starting point, to display a root list of all
-(for backwards compatibility) or topmost categories, use [`getFeeds`](#getFeeds) to
+(for backwards compatibility) or topmost categories, use [`getFeeds`](#getfeeds) to
 traverse deeper.
 
 ### getHeadlines
