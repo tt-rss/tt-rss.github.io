@@ -4,12 +4,10 @@ title: API Reference
 nav_order: 60
 ---
 
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
-1. TOC
+- TOC
 {:toc}
 
 ---

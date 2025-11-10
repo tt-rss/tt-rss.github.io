@@ -6,8 +6,6 @@ description: "Tiny Tiny RSS (tt-rss) is a free, flexible, open-source, web-based
 permalink: /
 ---
 
-{: .no_toc }
-
 Tiny Tiny RSS (tt-rss) is a free, flexible, open-source, web-based news feed (RSS/Atom/other) reader and aggregator.
 
 ## Screenshots
@@ -55,19 +53,7 @@ See the [Installation Guide](docs/Installation-Guide.md) for detailed instructio
 * Go to [https://github.com/tt-rss/tt-rss/discussions](https://github.com/tt-rss/tt-rss/discussions) if you have questions or want to discuss something.
 * Go to [https://github.com/tt-rss/tt-rss/issues](https://github.com/tt-rss/tt-rss/issues) if you want to report an issue, request an enhancement/feature, etc.
 
-## Documentation
-
-Browse the documentation:
-
-- [Installation Guide](docs/Installation-Guide.md)
-- [API Reference](docs/API-Reference.md)
-- [Plugins](docs/Plugins.md) and [Making Plugins](docs/Making-Plugins.md)
-- [Themes](docs/Themes.md)
-- [Content Filters](docs/Content-Filters.md)
-- [FAQ](docs/FAQ.md)
-- [Global Configuration](docs/Global-Config.md)
-
-## Development and Contributing
+## Development and contributing
 
 Contributions (code, translations, reporting issues, etc.) are welcome.
 Please see <https://github.com/tt-rss/tt-rss/blob/main/CONTRIBUTING.md> for more information.

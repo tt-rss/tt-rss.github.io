@@ -239,7 +239,7 @@ APP_WEB_ROOT=/var/www/html/tt-rss
 APP_BASE=
 ```
 
-Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH`.
+Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH` (if you have it set).
 
 ### How do I apply configuration options?
 

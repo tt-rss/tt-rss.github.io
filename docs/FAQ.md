@@ -7,8 +7,6 @@ nav_order: 3
 {: .note }
 > [Docker-related stuff is on a separate page](Installation-Guide#faq)
 
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
