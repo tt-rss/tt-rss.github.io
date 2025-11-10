@@ -42,7 +42,7 @@ Copy plugin folder to ```tt-rss/plugins.local``` then activate it in the setting
 Plugin folder name should correspond to plugin class name defined in ``(plugin)/init.php``,
 i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``.
 
-## First party plugins (maintained on this site but not bundled with-tt-rss)
+## First party plugins (maintained as part of the project but not bundled with tt-rss)
 
 <https://github.com/orgs/tt-rss/repositories?q=tt-rss-plugin+sort%3Aname-asc>
 
