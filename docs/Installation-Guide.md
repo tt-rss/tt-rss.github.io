@@ -40,14 +40,13 @@ Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` 
    complex ones.
 1. [Get the `docker-compose.yml` file](docs/Installation-Guide.md#docker-compose) and edit
    it to suit your needs.
-1. Run `docker-compose up` to run within the current shell. Add the `-d` option for
-   detached so you can run it in the background: `docker-compose -d up`.
+1. Run `docker-compose up -d` to run within the current shell. Note that the `-d` will detach the docker containers so when you close your shell, docker will still run.
 1. [Optional] Run `lazydocker` so you can always see what is happening.
    1. [Lazydocker](https://github.com/jesseduffield/lazydocker) is a nice little terminal
       UI for both `docker` and `docker-compose`, written in Go with the `gocui` library.
-      This means that you can run it in an ssh session to see what your docker compose
+      This means that you can run it in an SSH session to see what your Docker Compose
       installation is doing — or not.
-1. [Optional] Run lots of docker commands so you see what is happening. [Check the docker documentation](https://docs.docker.com/manuals/).
+1. [Optional] Run lots of Docker commands so you see what is happening. [Check the docker documentation](https://docs.docker.com/manuals/).
 
 ### .env
 
@@ -470,7 +469,7 @@ If your service uses a non-standard (i.e. not 80 or-443) port, make an internal 
 
 Backups are important as you will eventually lose your data due many a thing. It is better to have them rather than be sorry. Yes, even for a simple service like tt-rss.
 
-Additionally, you should download your data in `OPML` regularity and restore from backups from time to time — is quarterly too much?
+Restoring from backups from time to time (is quarterly too much?) is another thing you should get used to. There is no point in having backups if you cannot restore from them.
 
 If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins,-etc.) once a week to a separate storage volume.
 
@@ -504,6 +503,10 @@ The process to restore the database from a `backups` container backup might look
 2. Inside the container, locate and choose the backup file: `ls -t /backups/*.sql.gz`
 3. Clear database (**THIS WOULD DELETE EVERYTHING IN THE-DB**): `psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME -e -c "drop schema public cascade; create schema public"`
 3. Restore the backup: `zcat /backups/ttrss-backup-yyyymmdd.sql.gz | psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME`
+
+#### OPML
+
+Optionally, you could download your data in `OPML` regularity. It is not a full backup, can be useful nonetheless.
 
 ### How do I use custom certificates?
 
