@@ -34,7 +34,6 @@ Tiny Tiny RSS (tt-rss) is a free, flexible, open-source, web-based news feed (RS
   - [flexible article filtering](docs/Content-Filters.md)
   - [JSON API](docs/API-Reference.md)
   - and much more…
-- [Android Client](docs/Android-Client.md)
 
 ## Installation
 

@@ -9,8 +9,7 @@ feed. Combined with Readability this makes tt-rss function like a read it later
 kind of website.
 
 Sharing is available via bookmarklet in Preferences: (`Feeds` &rarr;
-`Bookmarklets`) (if you have ``bookmarklets`` plugin enabled) or through Android
-application.
+`Bookmarklets`) if you have the ``bookmarklets`` plugin enabled.
 
 ![Share anything dialog](../images/share_anything.png)
 
