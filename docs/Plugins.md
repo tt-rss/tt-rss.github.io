@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Plugins
-nav_order: 10
+parent: Features
 ---
 
 Tiny Tiny RSS supports many kinds of plugins: social plugins which share

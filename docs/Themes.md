@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Themes
-nav_order: 12
+parent: Features
 ---
 
 Install by copying theme CSS (and any other content, if needed) into ``themes.local`` directory under tt-rss root, then you'll be able to activate it in preferences.
