@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publish Articles
-nav_order: 46
+parent: Features
 ---
 
 You can publish selected articles to a special RSS feed, accessible to anyone
@@ -14,7 +14,7 @@ icon](http://feedicons.com/) near headline title:
 
 ![Publish icon in article header](../images/publish_articles.png)
 
-Resulting URL is displayed in Preferences (`Feeds` &rarr; `Published & shared-articles`).
+Resulting URL is displayed in Preferences (`Feeds` &rarr; `Published & shared articles`).
 
 
 {: .note }

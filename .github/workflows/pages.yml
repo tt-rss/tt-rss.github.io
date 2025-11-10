@@ -4,6 +4,12 @@ name: Build and deploy Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+    - '.github/**'
+    - '.*'
+    - CONTRIBUTING.md
+    - LICENSE
+    - README.md
   # Allow manual triggering
   workflow_dispatch:
 

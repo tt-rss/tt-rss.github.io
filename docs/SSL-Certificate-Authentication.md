@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SSL Certificate Authentication
-nav_order: 52
+parent: Legacy
 ---
 
 {: .warning }
@@ -9,30 +9,30 @@ nav_order: 52
 > [stock Docker Compose](Installation-Guide) setup. Please don't report any issues when
 > trying to DIY this.
 
-This article details the steps to enable user authentication with TT-RSS using a client certificate.
+This article details the steps to enable user authentication with tt-rss using a client certificate.
 
 ## Prerequisites
 
-You **must** have a working TT-RSS installation with SSL. This guide is not intended to walk you through installing TT-RSS, nor is it intended to help you enable HTTPS on your web server.
+You **must** have a working tt-rss installation with SSL. This guide is not intended to walk you through installing tt-rss, nor is it intended to help you enable HTTPS on your web server.
 
-If you have no idea how certificates work (i.e. the terms x509 and PKI make no sense to-you), stop now.
+If you have no idea how certificates work (i.e. the terms x509 and PKI make no sense to you), stop now.
 
-This guide includes steps for Nginx. Of course other web servers (e.g.-Apache) support client certificates so you're welcome to use them if you prefer, the steps just aren't included here (but might be added at some-point).
+This guide includes steps for Nginx. Of course other web servers (e.g. Apache) support client certificates so you're welcome to use them if you prefer, the steps just aren't included here (but might be added at some point).
 
 This guide was written with Debian 9 in mind, other distros will vary.
 
 ## Getting Started
 
 Client certificates are typically created/issued by a private Certificate Authority
-(i.e. **you** as the administrator would create the certificates for your-users). You
+(i.e. **you** as the administrator would create the certificates for your users). You
 create a root certificate authority and install the **public** certificate for it on
 your web server. You then create certificates for each client, signed by the root
 certificate authority's private key. Each client is issued their certificate and
-private key (often as a single file with a `.p12`-extension).
+private key (often as a single file with a `.p12` extension).
 
 Note:
 
-1. These certificates are distinct from the ones used for encrypted/HTTPS connections on your server. Those are usually issued by public Certificate Authorities (e.g. Let's-Encrypt).
+1. These certificates are distinct from the ones used for encrypted/HTTPS connections on your server. Those are usually issued by public Certificate Authorities (e.g. Let's Encrypt).
 2. Do **not** do the certificate creation on your public, Internet-facing web server. This should be done on a computer that's offline and the certificate authority's private key should be kept in a safe place.
 
 ## Server Setup
@@ -47,7 +47,7 @@ sudo chmod 644 /usr/local/share/ca-certificates/ttrss-ca.crt
 
 (In Debian run the command `sudo update-ca-certificates` to rebuild the list of certificate-authorities.)
 
-Edit your Nginx conf file for your TT-RSS installation to add the certificate and have Nginx validate clients with it.
+Edit your Nginx conf file for your tt-rss installation to add the certificate and have Nginx validate clients with it.
 
 Note:
 
@@ -82,15 +82,15 @@ Now restart Nginx:
 sudo systemctl restart nginx
 ```
 
-Update the TT-RSS config file to add `auth_remote` to the `PLUGINS` constant (near the end of the file):
+Update the tt-rss config file to add `auth_remote` to the `PLUGINS` constant (near the end of the file):
 
 ```php
-define('PLUGINS', 'auth_internal, auth_remote,-note');
+define('PLUGINS', 'auth_internal, auth_remote, note');
 ```
 
 You might be tempted to remove `auth_internal` but we still need it so don't.
 
-Next, make sure your client certificate (the `.p12`-file) is installed on your
+Next, make sure your client certificate (the `.p12` file) is installed on your
 computer. Different operating systems and browsers do this differently, so you're
 pretty much on your own there. However, if you double-click the .p12 file from the
 desktop, the operating system should offer to install it for you.
@@ -100,13 +100,13 @@ certificates provided by the operating system. Third-party installed browsers (e
 Firefox) often need to have the .p12 file added to them independently of the
 operating system.
 
-After successfully installing the client certificate, open a new browser window/tab and visit your TT-RSS install. You should immediately be asked to confirm or select the client certificate you want to use. Select the appropriate one. You may have to login with your username/password; this is expected.
+After successfully installing the client certificate, open a new browser window/tab and visit your tt-rss install. You should immediately be asked to confirm or select the client certificate you want to use. Select the appropriate one. You may have to login with your username/password; this is expected.
 
 Go to Preferences and scroll to the bottom. Under *Login with an SSL certificate* the *Register* button should now be available. Click it, then *Save configuration*.
 
-At this point you should be able to test if this all works. Logout of your TT-RSS
+At this point you should be able to test if this all works. Logout of your tt-rss
 session, clear your browser cache and cookies, then open a new window/tab and visit
-your TT-RSS install. You may be asked to verify the client certificate (some
+your tt-rss install. You may be asked to verify the client certificate (some
 browsers ask every session and others remember your choice). Once you select the
 certificate it should just log you without using the username/password form.
 

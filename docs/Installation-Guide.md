@@ -4,22 +4,20 @@ title: Installation Guide
 nav_order: 2
 ---
 
-{: .no_toc }
-
 ## Table of contents
 {: .no_toc .text-delta }
 
-1. TOC
+- TOC
 {:toc}
 
 ---
 
-The main (and-recommended) way to run tt-rss is under Docker.
+The main (and recommended) way to run tt-rss is under Docker.
 
-Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and-`linux/arm64`) and published
-([via GitHub-Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
-* Docker Hub (as-[supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
-* GitHub Container Registry (as-[ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
+Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and `linux/arm64`) and published
+([via GitHub Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
+* Docker Hub (as [supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
+* GitHub Container Registry (as [ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
   and [ghcr.io/tt-rss/tt-rss-web-nginx](https://github.com/orgs/tt-rss/packages/container/package/tt-rss-web-nginx)).
 
 {: .warning }
@@ -74,7 +72,7 @@ Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` 
 # 10 - admin
 #ADMIN_USER_ACCESS_LEVEL=
 
-# Auto create another user (in addition to built-in-admin) unless it already exists.
+# Auto create another user (in addition to built-in admin) unless it already exists.
 #AUTO_CREATE_USER=
 #AUTO_CREATE_USER_PASS=
 #AUTO_CREATE_USER_ACCESS_LEVEL=0
@@ -104,7 +102,7 @@ HTTP_PORT=127.0.0.1:8280
 
 {: .warning }
 > See [this FAQ entry](#i-got-the-updated-docker-compose-file-above-and-now-my-database-keeps-restarting)
-> if you're upgrading between PostgreSQL major versions (e.g. 15 to-17).
+> if you're upgrading between PostgreSQL major versions (e.g. 15 to 17).
 
 {: .warning }
 > Regarding PostgreSQL 18:
@@ -196,8 +194,8 @@ volumes:
 
 ### Your Docker images won't run on X
 
-If you're using an OS or architecture that isn't currently supported you'll likely need to
-build your own Docker images by using an override and running `docker compose build`.
+If you're using an OS or architecture that isn't currently supported (i.e. something other than `linux/amd64` and `linux/arm64`),
+you'll likely need to build your own Docker images by using an override and running `docker compose build`.
 
 ```yaml
 # docker-compose.override.yml
@@ -222,10 +220,10 @@ services:
 ```
 
 `BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version info properly.
-If that doesn't work for you (no-BuildKit?) you'll have to resort to terrible hacks.
+If that doesn't work for you (no BuildKit?) you'll have to resort to terrible hacks.
 
 {: .warning }
-> Self-built images are not necessarily supported (i.e. best effort and/or community-support).
+> Self-built images are not necessarily supported (i.e. best effort and/or community support).
 
 ### I got the updated Docker Compose file above and now my database keeps restarting
 
@@ -236,15 +234,15 @@ We'll use the following error message as an example of what you might see in the
 Official PostgreSQL containers have no support for migrating data between major versions.
 Using the aforementioned example, you could do one of the following:
 
-1. Replace `postgres:15-alpine` with `postgres:12-alpine` in `docker-compose.yml` (or use `docker-compose.override.yml`, see-below) and keep using PG 12
+1. Replace `postgres:15-alpine` with `postgres:12-alpine` in `docker-compose.yml` (or use `docker-compose.override.yml`, see below) and keep using PG 12
 2. Use [this DB container](https://github.com/pgautoupgrade/docker-pgautoupgrade) which would automatically upgrade the database
-3. Migrate the data manually using `pg_dump` and `pg_restore` (somewhat complicated if you haven't done it-before)
+3. Migrate the data manually using `pg_dump` and `pg_restore` (somewhat complicated if you haven't done it before)
 
-### I'm using docker-compose.override.yml and now I'm getting schema update (and-other) strange issues
+### I'm using docker-compose.override.yml and now I'm getting schema update (and other) strange issues
 
 Alternatively, you've changed something related to `/var/www/html/tt-rss` in `docker-compose.yml`.
 
-Your Docker setup is messed up for some reason, so tt-rss can't update itself to the persistent storage location on startup (this is just an example of one issue, there could be many-others).
+Your Docker setup is messed up for some reason, so tt-rss can't update itself to the persistent storage location on startup (this is just an example of one issue, there could be many others).
 
 Consider undoing any recent changes, looking up error messages, etc.
 
@@ -257,11 +255,11 @@ APP_WEB_ROOT=/var/www/html/tt-rss
 APP_BASE=
 ```
 
-Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH`.
+Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH` (if you have it set).
 
 ### How do I apply configuration options?
 
-There are two sets of options you can change through the environment - options specific to tt-rss (those are prefixed with-`TTRSS_`) and options affecting container behavior.
+There are two sets of options you can change through the environment: those specific to tt-rss (those are prefixed with `TTRSS_`) and those affecting container behavior.
 
 #### Options specific to tt-rss
 
@@ -279,7 +277,7 @@ Look at [Global-Config](Global-Config.md) for more information.
 
 Some options, but not all, are mentioned in `.env-dist`. You can see all available options in the [Dockerfile](https://github.com/tt-rss/tt-rss/blob/main/.docker/app/Dockerfile).
 
-### How do I customize the YML without committing my changes to git?
+### How do I customize the YAML without committing my changes to git?
 
 You can use [docker-compose.override.yml](https://docs.docker.com/compose/extends/). For example, customize `db` to use a different `postgres` image:
 
@@ -375,7 +373,7 @@ PING app (172.18.0.3): 56 data bytes
 round-trip min/avg/max = 0.128/0.159/0.206 ms
 ```
 
-Containers communicate via DNS names assigned by Docker based on service names defined in `docker-compose.yml`. This means that services (specifically,-`app`) and Docker DNS service should be functional.
+Containers communicate via DNS names assigned by Docker based on service names defined in `docker-compose.yml`. This means that services (specifically `app`) and Docker DNS service should be functional.
 
 Similar issues may be also caused by Docker `iptables` functionality either being disabled or conflicting with `nftables`.
 
@@ -449,9 +447,9 @@ Note that `proxy_pass` in this example points to container website root.
   </IfModule>
 ```
 
-### I have internal web services tt-rss is complaining about (URL is invalid, loopback address, disallowed-ports)
+### I have internal web services tt-rss is complaining about (URL is invalid, loopback address, disallowed ports)
 
-Put your local services on the same Docker network with tt-rss, then access them by service (=-host) names, i.e. `http://rss-bridge/`.
+Put your local services on the same Docker network with tt-rss, then access them by service (=host) names, i.e. `http://rss-bridge/`.
 
 ```yml
 services:
@@ -463,7 +461,7 @@ networks:
       name: ttrss-docker_default
 ```
 
-If your service uses a non-standard (i.e. not 80 or-443) port, make an internal reverse proxy sidecar container for it.
+If your service uses a non-standard (i.e. not 80 or 443) port, make an internal reverse proxy sidecar container for it.
 
 ### Backup and restore
 
@@ -471,18 +469,18 @@ Backups are important as you will eventually lose your data due many a thing. It
 
 Restoring from backups from time to time (is quarterly too much?) is another thing you should get used to. There is no point in having backups if you cannot restore from them.
 
-If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins,-etc.) once a week to a separate storage volume.
+If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins, etc.) once a week to a separate storage volume.
 
 Note that this container is included as a safety net for people who wouldn't bother with backups otherwise.
 If you value your data, you should invest your time into setting up something like [WAL-G](https://github.com/wal-g/wal-g) instead.
 
 #### Manually taking a backup
 
-To run [`.docker/app/backup.sh`](https://github.com/tt-rss/tt-rss/blob/main/.docker/app/backup.sh) (the backup script that executes-weekly):
+To run [`.docker/app/backup.sh`](https://github.com/tt-rss/tt-rss/blob/main/.docker/app/backup.sh) (the backup script that executes weekly):
 
 `docker compose exec backups /etc/periodic/weekly/backup`
 
-Alternatively, if you want to initiate backups from the host (or if you're using PostgreSQL 18+, currently incompatible with the `backup`-container) you can do something like this:
+Alternatively, if you want to initiate backups from the host (or if you're using PostgreSQL 18+, currently incompatible with the `backup` container) you can do something like this:
 
 ```sh
 source .env
@@ -501,7 +499,7 @@ The process to restore the database from a `backups` container backup might look
 
 1. Enter `backups` container shell: `docker compose exec backups /bin/sh`
 2. Inside the container, locate and choose the backup file: `ls -t /backups/*.sql.gz`
-3. Clear database (**THIS WOULD DELETE EVERYTHING IN THE-DB**): `psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME -e -c "drop schema public cascade; create schema public"`
+3. Clear database (**THIS WOULD DELETE EVERYTHING IN THE DB**): `psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME -e -c "drop schema public cascade; create schema public"`
 3. Restore the backup: `zcat /backups/ttrss-backup-yyyymmdd.sql.gz | psql -h db -U $TTRSS_DB_USER $TTRSS_DB_NAME`
 
 #### OPML
@@ -537,7 +535,7 @@ You'll need to set several mandatory environment values to the container running
 
 ### Where's the Helm chart?
 
-You'll have to make your own.
+There isn't an official Helm chart.
 
 ### I'm using Podman, and
 

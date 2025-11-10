@@ -9,27 +9,29 @@ on:
   # Allow other workflows (e.g. Pages) to invoke this one.
   workflow_call:
 
-permissions:
-  contents: read
-  statuses: write
+permissions: {}
 
 jobs:
   super-linter:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      statuses: write
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Run Super-Linter
         uses: super-linter/super-linter/slim@v8
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BRANCH: main
-          # Validate all files on push/workflow_dispatch, only changed files on
-          # PRs
+          # Validate all files on push/workflow_dispatch, only changed files on PRs
           VALIDATE_ALL_CODEBASE: >-
             ${{ github.event_name != 'pull_request' }}
+          # VALIDATE_GITHUB_ACTIONS_ZIZMOR: true
           VALIDATE_MARKDOWN: true
+          # VALIDATE_NATURAL_LANGUAGE: true
           VALIDATE_YAML: true

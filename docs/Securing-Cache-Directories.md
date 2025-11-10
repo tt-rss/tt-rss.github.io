@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Securing Cache Directories
-nav_order: 49
+parent: Security
 ---
 
 {: .note }
@@ -28,7 +28,7 @@ location = /tt-rss/config.php {
 
 Note: official docker setup has this out of the box.
 
-## Using apache (2.4-syntax)
+## Using apache (2.4 syntax)
 
 ```apache
 <Directory /var/www/html/tt-rss/cache>

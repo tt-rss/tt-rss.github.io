@@ -1,12 +1,19 @@
 ---
 layout: default
 title: Global Configuration
-nav_order: 21
+nav_order: 4
 ---
 
-All settings (see `_DEFAULTS[]` for default values) are listed here:
+## Table of contents
+{: .no_toc .text-delta }
 
-- <https://github.com/tt-rss/tt-rss/blob/main/classes/Config.php> (source code, including default values)
+- TOC
+{:toc}
+
+## tt-rss configuration
+
+All tt-rss settings may be found in <https://github.com/tt-rss/tt-rss/blob/main/classes/Config.php>; the default values are in `_DEFAULTS`.
+You might find the [`Prefs_Effective_Config`](https://github.com/tt-rss/tt-rss-plugin-prefs-effective-config) plugin helpful.
 
 It is preferred to adjust tt-rss global configuration through the environment (e.g. using your Docker `.env` file):
 
@@ -24,7 +31,7 @@ putenv('TTRSS_DB_HOST=myserver');
 putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 ```
 
-- Note lack of quotes around values.
+- Note the lack of quotes around values.
 - Options should be always prefixed by `TTRSS_`.
 - Don't modify `classes/config.php`.
 - You don't need to put everything to `config.php`, only the options which you've changed from the defaults.
@@ -32,16 +39,16 @@ putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 Legacy plugin-required constants also go to `config.php`, using `define()`:
 
 ```js
-define('LEGACY_CONSTANT',-'value');
+define('LEGACY_CONSTANT', 'value');
 ```
 
-To set computed values via `putenv()` you have to get them evaluated by PHP, this would work:
+To set computed values via `putenv()` you have to get them evaluated by PHP, so this would work:
 
 ```js
 putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 ```
 
-However, these won't give you expected results:
+However, these won't give you the expected results:
 
 ```js
 putenv("TTRSS_SESSION_COOKIE_LIFETIME='2592000'");
@@ -57,7 +64,7 @@ putenv('TTRSS_SESSION_COOKIE_LIFETIME=86400*30');
 
 ## Minimal config.php for a non-Docker setup
 
-Should have at least these options defined:
+You should have at least these options defined:
 
 ```php
 <?php
@@ -70,7 +77,12 @@ putenv('TTRSS_SELF_URL_PATH=http://example.com/tt-rss/'); # fully-qualified URL 
 putenv('TTRSS_PHP_EXECUTABLE=/path/to/php-cli-binary'); # normally something like /usr/bin/php
 ```
 
-## Migrating from old style config.php
+{: .note }
+> In recent versions of tt-rss you may be able to omit `TTRSS_SELF_URL_PATH` and
+> rely on auto-detection, but it should be set if you use email digests or other background
+> processes that need your instance's URL (or if you run into issues).
+
+## Migrating from the old-style config.php
 
 For any `config.php` settings you have changed from the defaults (normally this
 is the `DB_` group of settings and `SELF_URL_PATH`, replace as follows, using
