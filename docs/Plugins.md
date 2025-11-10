@@ -60,6 +60,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 > Consider discovering plugins via alternate methods (e.g. <https://github.com/topics/tt-rss-plugin>, <https://github.com/topics/ttrss-plugins>, etc.).
 
 ### Sharing plugins
+{: .no_toc }
 
 #### A Tiny Tiny RSS plugin to post to a Wallabag v2 instance
 
@@ -78,6 +79,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 <https://github.com/joshp23/ttrss-to-Sci-Hub>
 
 ### Feed data manipulation plugins
+{: .no_toc }
 
 #### Enable embedded videos in feeds - videoframes
 
@@ -92,6 +94,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 <https://github.com/joshp23/TTRSS-APOD-Fix>
 
 ### Webcomics plugins
+{: .no_toc }
 
 #### Comic plugin GU Comics, Married to the sea & Toothpaste for dinner
 
@@ -106,6 +109,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 <https://github.com/ldidry/af_tapastic>
 
 ### API plugins
+{: .no_toc }
 
 #### FreshRSS / Google Reader API Support
 
@@ -120,6 +124,7 @@ Simulates the Fever API for reading RSS Feeds with your Fever clients.
 <https://github.com/DigitalDJ/tinytinyrss-fever-plugin>
 
 ### Other plugins
+{: .no_toc }
 
 #### Generate QR codes from article links, with xhr support and no disk cache
 
