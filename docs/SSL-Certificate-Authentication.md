@@ -17,7 +17,7 @@ You **must** have a working tt-rss installation with SSL. This guide is not inte
 
 If you have no idea how certificates work (i.e. the terms x509 and PKI make no sense to you), stop now.
 
-This guide includes steps for Nginx. Of course other web servers (e.g.-Apache) support client certificates so you're welcome to use them if you prefer, the steps just aren't included here (but might be added at some point).
+This guide includes steps for Nginx. Of course other web servers (e.g. Apache) support client certificates so you're welcome to use them if you prefer, the steps just aren't included here (but might be added at some point).
 
 This guide was written with Debian 9 in mind, other distros will vary.
 
@@ -28,7 +28,7 @@ Client certificates are typically created/issued by a private Certificate Author
 create a root certificate authority and install the **public** certificate for it on
 your web server. You then create certificates for each client, signed by the root
 certificate authority's private key. Each client is issued their certificate and
-private key (often as a single file with a `.p12`-extension).
+private key (often as a single file with a `.p12` extension).
 
 Note:
 
@@ -85,12 +85,12 @@ sudo systemctl restart nginx
 Update the tt-rss config file to add `auth_remote` to the `PLUGINS` constant (near the end of the file):
 
 ```php
-define('PLUGINS', 'auth_internal, auth_remote,-note');
+define('PLUGINS', 'auth_internal, auth_remote, note');
 ```
 
 You might be tempted to remove `auth_internal` but we still need it so don't.
 
-Next, make sure your client certificate (the `.p12`-file) is installed on your
+Next, make sure your client certificate (the `.p12` file) is installed on your
 computer. Different operating systems and browsers do this differently, so you're
 pretty much on your own there. However, if you double-click the .p12 file from the
 desktop, the operating system should offer to install it for you.

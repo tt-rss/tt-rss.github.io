@@ -16,7 +16,7 @@ configuration](Global-Config) directive <code>PLUGINS</code> which is a
 comma-separated list of enabled system plugins, i.e.
 
 ```js
-putenv('TTRSS_PLUGINS=auth_internal,-other_plugin');
+putenv('TTRSS_PLUGINS=auth_internal, other_plugin');
 ```
 
 System plugins are always enabled for all users. If multiple search plugins are loaded, only the first one is used

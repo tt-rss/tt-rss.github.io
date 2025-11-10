@@ -5,7 +5,7 @@ parent: Features
 ---
 
 You can generate a feed (in Atom or JSON format) for almost anything displayed
-in headlines buffer (e.g. actual feeds, Labels, Categories,-etc.) by clicking
+in headlines buffer (e.g. actual feeds, Labels, Categories, etc.) by clicking
 this icon:
 
 ![Generated feed icon](../images/gen_feed_icon.png)
@@ -58,7 +58,7 @@ Feed ID values less than `-10` are considered Labels.
 ### Special category IDs (is\_cat=1)
 
 - ``0`` - Uncategorized
-- ``-1`` - Special category (includes Starred, Published,-etc.)
+- ``-1`` - Special category (includes Starred, Published, etc.)
 - ``-2`` - Labels category (includes your labels)
 
 ### View mode values
@@ -78,9 +78,9 @@ specifier because unread articles are never part of the feed).
 
 ### Order values
 
-- ``default`` - depends on the feed: either import batch date or (for published and starred-feeds) ``last_published`` and ``last_marked``
+- ``default`` - depends on the feed: either import batch date or (for published and starred feeds) ``last_published`` and ``last_marked``
 - ``title`` - sort by title
 - ``date_reverse`` - reverse sort by batch date
 - ``feed_dates`` - sort by feed-provided article dates
 
-See-also: [Publish Articles](Publish-Articles.md)
+See also: [Publish Articles](Publish-Articles.md)

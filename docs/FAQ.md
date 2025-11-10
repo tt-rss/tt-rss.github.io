@@ -37,9 +37,9 @@ This sets your password back to default (``password``) and disables OTP.
 
 The problem is that if you have `auth_remote` enabled in [PLUGINS](Global-Config) tt-rss tries to automatically log you in as the user specified by the server using HTTP authentication, which may not have administrative privileges.
 
-The easiest way is simply updating database using CLI (`php ./update.php---update-schema`). Docker setup does this on startup.
+The easiest way is simply updating database using CLI (`php ./update.php --update-schema`). Docker setup does this on startup.
 
-Alternatively, you can either temporarily disable `auth_remote` (replace it with-`auth_internal`), temporarily disable HTTP authentication, or give yourself administrative permissions using SQL:
+Alternatively, you can either temporarily disable `auth_remote` (replace it with `auth_internal`), temporarily disable HTTP authentication, or give yourself administrative permissions using SQL:
 
 ```sql
     update ttrss_users set access_level = 10 where login = 'you';
@@ -105,7 +105,7 @@ Related question:
 
 Because the articles are still in the feed XML and get pulled in (again) on next feed update.
 
-See-also: [Archived Feed](Archived-Feed.md)
+See also: [Archived Feed](Archived-Feed.md)
 
 ### I have used update daemon before, but switched away from it. However, the UI keeps nagging me about the daemon not running or not updating feeds or whatever
 

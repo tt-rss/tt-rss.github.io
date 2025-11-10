@@ -127,11 +127,11 @@ password parameters.
 
 - On version:1.6.0 and above login also returns current API level as an
   <code>api\_level</code> integer, you can use that instead of calling `getApiLevel` after login.
-- Since API 17, also returns configuration object (see `getConfig`-below).
+- Since API 17, also returns configuration object (see [`getConfig`](#getconfig) below).
 
 ### logout
 
-Closes your login session. Returns either status message <code>{"status":"OK"}</code> or an error (e.g.-<code>{"error":"NOT_LOGGED_IN"}</code>)
+Closes your login session. Returns either status message <code>{"status":"OK"}</code> or an error (e.g. <code>{"error":"NOT_LOGGED_IN"}</code>)
 
 ### isLoggedIn
 
@@ -172,7 +172,7 @@ instead.
 Special category IDs are as follows:
 
 * 0 Uncategorized
-* -1 Special (e.g. Starred, Published, Archived,-etc.)
+* -1 Special (e.g. Starred, Published, Archived, etc.)
 * -2 Labels
 
 Added in version:1.5.0:
@@ -215,7 +215,7 @@ Parameters:
 - ``is_cat`` (bool) - requested `feed_id` is a category
 - ``show_excerpt`` (bool) - include article excerpt in the output
 - ``show_content`` (bool) - include full article text in the output
-- ``view_mode`` (string = all\_articles, unread, adaptive,-marked,
+- ``view_mode`` (string = all\_articles, unread, adaptive, marked,
     updated)
 - ``include_attachments`` (bool) - include article attachments (e.g.
     enclosures) **requires version:1.5.3**
@@ -233,7 +233,7 @@ Parameters:
     elements **<span class="10 api"></span>** (default: false)
 - ``include_header`` (bool) - adds status information when returning
     headlines, instead of array(articles) return value changes to
-    array(header,-array(articles)) (api 12)
+    array(header, array(articles)) (api 12)
 
 Limit:
 
@@ -411,7 +411,7 @@ Parameters:
 Note: Up until version:1.15 setArticleLabel() clears the label cache for
 the specified articles. Make sure to regenerate it (e.g. by calling API
 method getLabels() for the respecting articles) when you’re using
-methods which don’t do that by themselves (e.g.-getHeadlines())
+methods which don’t do that by themselves (e.g. getHeadlines())
 otherwise getHeadlines() will not return labels for modified articles.
 
 ### shareToPublished (since API level 4 --version:1.6.0)
@@ -433,7 +433,7 @@ subscribe\_to\_feed() in functions.php for details.
 Parameters:
 
 * ``feed_url`` - Feed URL (string)
-* ``category_id`` - Category id to place feed into (defaults to 0,-Uncategorized) (int)
+* ``category_id`` - Category id to place feed into (defaults to 0, Uncategorized) (int)
 * ``login``, ``password`` - Self explanatory (string)
 
 ### unsubscribeFeed (API level 5 --version:1.7.6)

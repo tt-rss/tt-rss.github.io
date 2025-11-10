@@ -16,9 +16,9 @@ nav_order: 2
 
 The main (and recommended) way to run tt-rss is under Docker.
 
-Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and-`linux/arm64`) and published
+Docker images for <https://github.com/tt-rss/tt-rss> are being built (for `linux/amd64` and `linux/arm64`) and published
 ([via GitHub-Actions](https://github.com/tt-rss/tt-rss/actions/workflows/publish.yml)) to:
-* Docker Hub (as-[supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
+* Docker Hub (as [supahgreg/tt-rss](https://hub.docker.com/r/supahgreg/tt-rss/) and [supahgreg/tt-rss-web-nginx](https://hub.docker.com/r/supahgreg/tt-rss-web-nginx/)).
 * GitHub Container Registry (as-[ghcr.io/tt-rss/tt-rss](https://github.com/orgs/tt-rss/packages/container/package/tt-rss)
   and [ghcr.io/tt-rss/tt-rss-web-nginx](https://github.com/orgs/tt-rss/packages/container/package/tt-rss-web-nginx)).
 
@@ -245,7 +245,7 @@ Don't forget to remove `/tt-rss/` from `TTRSS_SELF_URL_PATH`.
 
 ### How do I apply configuration options?
 
-There are two sets of options you can change through the environment - options specific to tt-rss (those are prefixed with-`TTRSS_`) and options affecting container behavior.
+There are two sets of options you can change through the environment: those specific to tt-rss (those are prefixed with-`TTRSS_`) and those affecting container behavior.
 
 #### Options specific to tt-rss
 

@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 Plugins may render new preference panes or embed themselves into several
-existing one, store data using simple key -\> value data or directly in
+existing one, store data using simple key/value data or directly in
 the database, modify how articles are rendered, alter feed data, and
 much more.
 

@@ -32,7 +32,7 @@ putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 Legacy plugin-required constants also go to `config.php`, using `define()`:
 
 ```js
-define('LEGACY_CONSTANT',-'value');
+define('LEGACY_CONSTANT', 'value');
 ```
 
 To set computed values via `putenv()` you have to get them evaluated by PHP, this would work:
