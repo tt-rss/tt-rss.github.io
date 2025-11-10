@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SSL Certificate Authentication
-nav_order: 52
+parent: Legacy
 ---
 
 {: .warning }

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Search Syntax
-nav_order: 48
 ---
 
 {: .note }

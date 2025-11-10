@@ -1,18 +1,18 @@
 ---
 layout: default
 title: Android Client
-nav_order: 40
+parent: Legacy
 ---
 
 ## **IMPORTANT**
 
 * The original tt-rss-android project, hosted at <https://tt-rss.org/> and its various subdomains,
-  [will be gone after 2025-11-01](https://community.tt-rss.org/t/the-end-of-tt-rss-org/7164).
+  went away on 2025-11-01.
 * There are currently no plans to continue maintaining the app.
 * The app's source code may be found at <https://github.com/tt-rss/tt-rss-android>.
-* **APK downloads from <https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases> are no longer working.  This is likely permanent.**
+* APKs that were available at <https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases> are gone.
 * This page's content should only be treated as a historical reference.
-* Refer to <https://github.com/tt-rss/tt-rss/discussions/29> for more information.
+* Refer to <https://github.com/tt-rss/tt-rss-android/discussions/8> for more information.
 
 ## Screenshots
 

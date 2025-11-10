@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Making Plugins
-nav_order: 11
+parent: Plugins
+nav_order: 1
 ---
 
 Plugins may render new preference panes or embed themselves into several

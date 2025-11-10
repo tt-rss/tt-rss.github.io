@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Content Filters
-nav_order: 20
+parent: Features
 ---
 
 Filters are a very powerful and flexible tool which may significantly ease the

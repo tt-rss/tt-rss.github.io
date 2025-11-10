@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sorting
-nav_order: 51
+parent: Features
 ---
 
 Tiny Tiny RSS provides four options for how articles appear within a

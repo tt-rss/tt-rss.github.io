@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Securing Cache Directories
-nav_order: 49
+parent: Security
 ---
 
 {: .note }

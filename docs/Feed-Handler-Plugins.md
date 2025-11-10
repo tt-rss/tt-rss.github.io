@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Feed Handler Plugins
-nav_order: 44
+parent: Plugins
+nav_order: 2
 ---
 
 {: .warning }

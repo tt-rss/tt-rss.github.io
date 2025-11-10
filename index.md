@@ -70,9 +70,8 @@ Browse the documentation:
 
 ## Development and Contributing
 
-* Contributions (documentation improvements, translations, reporting issues, etc.) are welcome.
-* Development and issue tracking primarily happens in [https://github.com/tt-rss/tt-rss](https://github.com/tt-rss/tt-rss).
-* Help translate tt-rss into your own language using [Weblate](https://hosted.weblate.org/engage/tt-rss/).
+Contributions (code, translations, reporting issues, etc.) are welcome.
+Please see <https://github.com/tt-rss/tt-rss/blob/main/CONTRIBUTING.md> for more information.
 
 ---
 

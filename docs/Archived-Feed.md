@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Archived Feed
-nav_order: 41
+parent: Features
 ---
 
 Archived is the place for articles for which originating feed no longer exists.

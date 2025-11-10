@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Global Configuration
-nav_order: 21
+nav_order: 4
 ---
 
 All settings (see `_DEFAULTS[]` for default values) are listed here:

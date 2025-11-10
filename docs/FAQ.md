@@ -1,7 +1,7 @@
 ---
 layout: default
 title: FAQ
-nav_order: 30
+nav_order: 3
 ---
 
 {: .note }

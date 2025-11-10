@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Scoring
-nav_order: 47
+parent: Features
 ---
 
 Scoring is supported in a way similar to some newsreaders. Score is calculated

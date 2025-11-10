@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Share Anything
-nav_order: 50
+parent: Features
 ---
 
 You can share arbitrary webpages to appear as articles in your ``Published``
 feed. Combined with Readability this makes tt-rss function like a read it later
 kind of website.
 
-Sharing is available via bookmarklet in Preferences: (`Feeds`-&rarr;
+Sharing is available via bookmarklet in Preferences: (`Feeds` &rarr;
 `Bookmarklets`) (if you have ``bookmarklets`` plugin enabled) or through Android
 application.
 

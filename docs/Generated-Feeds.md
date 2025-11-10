@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Generated Feeds
-nav_order: 45
+parent: Features
 ---
 
 You can generate a feed (in Atom or JSON format) for almost anything displayed

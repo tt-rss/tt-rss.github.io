@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publish Articles
-nav_order: 46
+parent: Features
 ---
 
 You can publish selected articles to a special RSS feed, accessible to anyone
