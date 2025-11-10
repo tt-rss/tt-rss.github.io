@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Search Syntax
+title: Search
+parent: Features
 ---
 
 {: .note }

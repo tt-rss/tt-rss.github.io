@@ -1,6 +1,7 @@
 ---
 layout: default
 title: API Reference
+nav_order: 60
 ---
 
 {: .no_toc }
