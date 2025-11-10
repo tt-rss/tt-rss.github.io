@@ -508,6 +508,12 @@ The process to restore the database from a `backups` container backup might look
 
 Optionally, you could download your data in `OPML` regularity. It is not a full backup, can be useful nonetheless.
 
+### Update tt-rss
+
+When you see that `tt-rss` needs an update, you can run the following docker command: `docker restart ttrss_app_1`.
+
+You can check that the container app is called `ttrss_app_1` by using `docker ps`.
+
 ### How do I use custom certificates?
 
 You need to mount custom certificates into the *app* and *updater* containers like this:
