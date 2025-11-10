@@ -7,6 +7,14 @@ nav_order: 3
 {: .note }
 > [Docker-related stuff is on a separate page](Installation-Guide#faq)
 
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
 ### I want to check how tt-rss renders my feed / the feed I'm trying to use is parsed incorrectly
 
 tt-rss expects valid XML feed data which is parsed using libxml. Any XML parse errors, should you feel that libxml is misbehaving (which is unlikely), should be reported to libxml developers. We don't add hacks for invalid XML on tt-rss side.
