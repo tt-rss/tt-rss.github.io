@@ -8,7 +8,7 @@ Scoring is supported in a way similar to some newsreaders. Score is calculated
 on article import using special filters with a "Modify score" action.
 
 Resulting score is a sum of all score modifiers from all matching filters. For
-example, if the article matches two filters A (score-+100) and B (score--50),
+example, if the article matches two filters A (score +100) and B (score -50),
 the resulting score will be 50.
 
 Article score affects the position of the article in the headline buffer (which
