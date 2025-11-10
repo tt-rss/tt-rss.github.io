@@ -34,19 +34,19 @@ Place [`.env`](#env) and [`docker-compose.yml`](#docker-composeyml) (contents be
 
 1. Create a directory for your tt-rss installation. Do the remaining steps in there.
 2. Create a `.env` file using [`.env`](#env) as a starting point; edit it to suit your needs (e.g. adjusting `HTTP_PORT`).
-  * Consider changing password/secret environment variables to something you're comfortable with (e.g. `pwgen`-generated values).
-4. Create a `docker-compose.yml` file using [`docker-compose.yml`](#docker-composeyml) as a starting point; edit it to suit your needs
+   * Consider changing password/secret environment variables to something you're comfortable with (e.g. `pwgen`-generated values).
+3. Create a `docker-compose.yml` file using [`docker-compose.yml`](#docker-composeyml) as a starting point; edit it to suit your needs
    (e.g. enabling the `backups` container, using the `ghcr.io` images, using a newer `postgres` image, etc.).
-5. Run [`docker compose up -d`](https://docs.docker.com/reference/cli/docker/compose/up/) to bring up the environment.
-  * Note that the `-d` will result in the containers running in the background, which is generally what you want.
-6. Review containers logs and states.  Some typical ways this may be done include:
-  * Running commands like [`docker compose ps`](https://docs.docker.com/reference/cli/docker/compose/ps/) and [`docker compose logs`](https://docs.docker.com/reference/cli/docker/compose/logs/)
-  * Using a third-party tool like [`lazydocker`](https://github.com/jesseduffield/lazydocker) (a terminal UI for Docker and Docker Compose).
-7. Access tt-rss in your browser.
-  * The URL to use depends upon how you set things up, but assuming you kept `HTTP_PORT=127.0.0.1:8280` in your `.env` file and are on the same system
-    as tt-rss, you'd use <http://127.0.0.1:8280/tt-rss>.
-8. Log in as `admin` or (if you enabled the related environment variables) the auto-created user.
-  * See comments in [`.env`](#env) regarding the password(s).
+4. Run [`docker compose up -d`](https://docs.docker.com/reference/cli/docker/compose/up/) to bring up the environment.
+   * Note that the `-d` will result in the containers running in the background, which is generally what you want.
+5. Review containers logs and states.  Some typical ways this may be done include:
+   * Running commands like [`docker compose ps`](https://docs.docker.com/reference/cli/docker/compose/ps/) and [`docker compose logs`](https://docs.docker.com/reference/cli/docker/compose/logs/)
+   * Using a third-party tool like [`lazydocker`](https://github.com/jesseduffield/lazydocker) (a terminal UI for Docker and Docker Compose).
+6. Access tt-rss in your browser.
+   * The URL to use depends upon how you set things up, but assuming you kept `HTTP_PORT=127.0.0.1:8280` in your `.env` file and are on the same system
+     as tt-rss, you'd use <http://127.0.0.1:8280/tt-rss>.
+7. Log in as `admin` or (if you enabled the related environment variables) the auto-created user.
+   * See comments in [`.env`](#env) regarding the password(s).
 
 ### .env
 
