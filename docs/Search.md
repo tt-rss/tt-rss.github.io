@@ -133,10 +133,12 @@ The negative expression can be written in two ways:
 
 A [text keyword](#text_keyword) can be a single word such as `ocean`. If the article contains `ocean` or `oceanographer`, the `ocean` fragment is highlighted.
 A [text keyword](#text_keyword) can also be successive words enclosed in quotes such as `"pacific ocean"`. If the article contains `pacific oceanographer`, the `pacific ocean` fragment is highlighted.
+
 {: .note }
 > Due to incomplete implementation, the word is not correctly highlighted when a [stemmed](#word_stemming) variant is used. For example, if the user searches for _secured_, articles containing _security_ are displayed, however as _secured_ is not in the content, it is not highlighted.
 
 If the searched word is prefixed by the negation `-`, it is not highlighted.
+
 {: .note }
 > Due to incomplete implementation, the negation with `!` is not detected, so words negated in a such way are still highlighted. Use the `-` sign instead.
 
