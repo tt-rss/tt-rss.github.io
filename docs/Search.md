@@ -5,7 +5,7 @@ parent: Features
 ---
 
 {: .note }
-> This page's content only applies to the built-in search. Plugins may override the default search behavior.
+> This page's content only applies to Tiny Tiny RSS's built-in search. Plugins may provide alternative search behavior.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -21,7 +21,7 @@ A search query consists of one or more keywords, of which there are 3 types:
 
 * <a id="keyword-text"></a> **Text**
   * A Text keyword may be a single word such as `ocean` or successive words enclosed in quotes such as `"pacific ocean"`.
-  * These keywords are searched using the PostgreSQL [Full Text Search](#postgresql-full-text-search) engine,
+  * These keywords are searched using the PostgreSQL [Full Text Search engine](#postgresql-full-text-search),
    which supports [word stemming](#word-stemming) and [logical operators](#logical-operators).
 * <a id="keyword-field"></a> **Field**
   * A Field keyword allows filtering articles by supported fields (shown below).
@@ -36,6 +36,7 @@ A search query consists of one or more keywords, of which there are 3 types:
     * `tag:true`, `tag:false`, `tag:sometag`, `tag:"two words"` - match articles with any tag, no tag, or having the specified tag (exact-string match)
 * <a id="keyword-date"></a> **Date**
   * A Date keyword allows filtering articles by their publication (or last updated) date.
+  * A Date keyword has to represent a fixed day. For example `@"last week"`, `@2023-11` or `@2024` cannot be used because they represent a range of several days.
   * Examples:
     * `@2025-10-28` (formatted as `@YYYY-MM-DD`)
     * `@2025/10/28` (formatted as `@YYYY/MM/DD`)
@@ -46,8 +47,6 @@ A search query consists of one or more keywords, of which there are 3 types:
     * `@yesterday`
     * `@"2 days ago"`
     * `@"last Monday"`
-  * {: .note }
-    > A Date keyword has to represent a fixed day. For example `@"last week"`, `@2023-11` or `@2024` cannot be used because they represent a range of several days.
 
 
 A keyword starting with `-` (negative sign) represents a negative match. `-` can be applied before any type of keyword.
@@ -58,7 +57,7 @@ For example: `ocean "tree flower" note:true -title:"orange color"` searches for 
 AND containing the phrase _"tree flower"_ (with [stemming](#word-stemming)) AND having any note AND having a title not containing the phrase _"orange color"_.
 
 Other [logical operators](#logical-operators) are only supported around a [Text keyword](#keyword-text), as they're processed by the
-PostgreSQL [Full Text Search](#postgresql-full-text-search) engine.  A [Field keyword](#keyword-field) or [Date keyword](#keyword-date)
+PostgreSQL [Full Text Search engine](#postgresql-full-text-search).  A [Field keyword](#keyword-field) or [Date keyword](#keyword-date)
 does not support those PostgreSQL [logical operators](#logical-operators).
 
 
@@ -92,7 +91,7 @@ so comparing them may lead to unexpected results.
 In Tiny Tiny RSS there is a special language named _Simple_. Word stemming in the _Simple_ language is almost equivalent to exact string matching.
 With the _Simple_ language only punctuation such as commas are removed. The power of word stemming isn't applied, but _Simple_ works well when dealing with multiple languages.
 
-It's also possible to search for a word with a specific prefix using the syntax `prefix:*` (e.g. `secu:*` matches every word starting with `secu`).
+It's also possible to search for a word with a specific prefix using the syntax `prefix:*` (e.g. `secu:*` matches every word starting with `secu`, such as `security`).
 
 ### Logical operators
 
@@ -125,8 +124,8 @@ For example: `ocean & ( ( pacific | atlantic ) & ! "black sea" )`
 {: .note }
 > When a search query contains [Field keywords](#keyword-field) or [Date keywords](#keyword-date) _and_ [Text keywords](#keyword-text) using logical operators,
 > it's recommended to write the [Text keywords](#keyword-text) at the end (or the beginning) and to surround them with parentheses.
-> For example: when reading `-title:submarine @yesterday ( pacific | atlantic )` one can easily understand that the parentheses contains a complex fragment
-> that has to be well formatted with no missing operator.
+> For example: when reading `-title:submarine @yesterday ( pacific | atlantic )` one can easily understand that the parentheses contain a complex fragment
+> that has to be well formatted (with no missing operators).
 
 {: .note }
 > Due to current parser limitations, the `-` negation does not work before a parenthesis (only before a [Text keyword](#keyword-text)).
