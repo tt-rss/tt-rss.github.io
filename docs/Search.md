@@ -5,7 +5,7 @@ parent: Features
 ---
 
 {: .note }
-> This page's content only applies to Tiny Tiny RSS's built-in search. Plugins may provide alternative search behavior.
+> This page's content only applies to Tiny Tiny RSS's built-in search. Plugins may provide different search behavior.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -36,7 +36,7 @@ A search query consists of one or more keywords, of which there are 3 types:
     * `tag:true`, `tag:false`, `tag:sometag`, `tag:"two words"` - match articles with any tag, no tag, or having the specified tag (exact-string match)
 * <a id="keyword-date"></a> **Date**
   * A Date keyword allows filtering articles by their publication (or last updated) date.
-  * A Date keyword has to represent a fixed day. For example `@"last week"`, `@2023-11` or `@2024` cannot be used because they represent a range of several days.
+  * A Date keyword has to represent a fixed day. For example: `@"last week"`, `@2023-11`, or `@2024` cannot be used because they represent a range of several days.
   * Examples:
     * `@2025-10-28` (formatted as `@YYYY-MM-DD`)
     * `@2025/10/28` (formatted as `@YYYY/MM/DD`)
@@ -185,5 +185,6 @@ Desired areas of improvement include:
 * logical operators and grouping around any type of keyword
 * proper highlighting in all cases
 * detection of invalid queries, with a warning displayed
+* date ranges
 
 Contributions are welcome!
