@@ -72,13 +72,13 @@ PostgreSQL provides:
 
 For example: `ocean & ( ( pacific | atlantic ) & ! "black sea" )`
 
-{: warning }
+{: .warning }
 > Due to current parser limitations, the handling of space is important:
 > - Spaces are **required around words enclosed in quotes** such as `"black sea"`, otherwise the parser does not detect the quotes.
 > - Spaces are **recommended around single words** such as `atlantic`, otherwise the word is not highlighted (please also see [highlighting limitations](#highlighting_limitations)).
 > - Spaces are **recommended around logical operators**, otherwise highlighting may not work correctly.
 
-{: warning }
+{: .warning }
 > Due to current parser limitations, when at least one operator is detected Tiny Tiny RSS does not apply the default _AND_ operator. Tiny Tiny RSS expects the whole query to be well formatted. For example the query `one two` works because no operator is detected, so Tiny Tiny RSS adds the _AND_.
 > However, `one two & three` fails because Tiny Tiny RSS detects the `&` operator, so expects the whole query to be well formatted, and does not add the missing `&` between the words `one` and `two`.
 
@@ -149,7 +149,7 @@ If the searched word is prefixed by the negation `-`, it is not highlighted.
 <a id="undetected_errors"></a>
 ## Undetected errors
 
-{: warning }
+{: .warning }
 > Due to current parser limitations, most syntax errors are undetected. When user enters a badly formatted search query, it is incorrectly parsed, no message is displayed, and the results are unexpected.
 
 
