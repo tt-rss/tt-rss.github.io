@@ -18,7 +18,7 @@ syntax is used.
 > complex filters. It is suggested to test filters using ``Feed debugger`` (hotkey `f-D`) if you
 > feel that some filter is somehow misfiring on a specific feed.
 
-### Load order
+## Load order
 
 Filters are loaded in user-specified order and applied sequentially. It is
 possible to reorder filters using drag and drop. If no manual sorting is
@@ -26,7 +26,7 @@ specified, filters are sorted alphabetically according to user configured
 caption. If no caption is specified for any filter, loading order is not
 guaranteed.
 
-### Filter objects
+## Filter objects
 
 Each filter object may contain an arbitrary amount of regular expression rules
 and actions. Each expression may have inverse flag set, which inverts matching
@@ -41,7 +41,7 @@ as, title, content, author, etc.
 {: .warning }
 > Do not include delimiters (e.g. <code>/</code>) when writing regular expressions.
 
-### Matching articles and applying actions
+## Matching articles and applying actions
 
 Filter matching is performed during feed processing.
 

@@ -8,7 +8,7 @@ Install by copying theme CSS (and any other content, if needed) into ``themes.lo
 
 **Please note that we’re not responsible for third party themes. Use at your own risk.**
 
-### FeedMei Theme + Plugins for Tiny Tiny RSS
+## FeedMei Theme + Plugins for Tiny Tiny RSS
 
 <img src="https://codeberg.org/ltguillaume/feedmei/media/branch/main/SCREENSHOT.png" alt="">
 <img src="https://codeberg.org/ltguillaume/feedmei/media/branch/main/SCREENSHOT2.png" alt="">
@@ -17,7 +17,7 @@ A clean and minimal theme for Tiny Tiny RSS, loosely inspired by Feedly. Built b
 
 **Codeberg** <https://codeberg.org/ltguillaume/feedmei>
 
-### Clean GReader Theme
+## Clean GReader Theme
 
 <img src="https://raw.github.com/naeramarth7/clean-greader/master/img/preview.png" alt="" style="width: 200px;"/>
 
@@ -26,7 +26,7 @@ Google Reader it has a white/greyish look.
 
 **Github** <https://github.com/naeramarth7/clean-greader>
 
-### Feedly Theme
+## Feedly Theme
 
 <img src="https://raw.github.com/levito/tt-rss-feedly-theme/master/feedly-screenshots/feedly-expandable.png" alt="" style="width: 200px;"/>
 
@@ -34,7 +34,7 @@ A theme built from scratch, independent of default css. Emulates the greyish loo
 
 **Github** <https://github.com/levito/tt-rss-feedly-theme>
 
-### Reeder Theme
+## Reeder Theme
 
 <img src="https://github.com/tschinz/tt-rss_reeder_theme/blob/master/reeder_screenshot/combined_mode_1.png?raw=true" alt="" style="width: 200px;"/>
 

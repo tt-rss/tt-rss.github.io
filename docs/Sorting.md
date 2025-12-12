@@ -4,8 +4,10 @@ title: Sorting
 parent: Features
 ---
 
+## Sort Options
+
 Tiny Tiny RSS provides four options for how articles appear within a
-selected feed: `Default`, `Newest`, `Oldest`, `Title`.
+selected feed: `Default`, `Newest first`, `Oldest first`, `Title`.
 
 {: .note }
 > Special feeds (e.g. *Starred articles*) have unique sorting when *Default* is selected, otherwise they behave as described below.
@@ -22,11 +24,11 @@ This is the default (surprise!) and is recommended.
 2. Descending date/time the article was added into the Tiny Tiny RSS database.
 3. Descending date/time the feed's site states the article was published or changed.
 
-### Newest
+### Newest first
 
 1. Descending date/time the feed's site states the article was published or changed.
 
-### Oldest
+### Oldest first
 
 1. Ascending date/time the feed's site states the article was published or changed.
 
