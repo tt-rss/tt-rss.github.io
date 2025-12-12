@@ -1,4 +1,4 @@
-# Tiny Tiny RSS Documentation Site
+# Tiny Tiny RSS Site
 
 This repository contains the source for <https://tt-rss.org>.
 
