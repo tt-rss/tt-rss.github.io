@@ -110,9 +110,8 @@ HTTP_PORT=127.0.0.1:8280
 
 {: .warning }
 > Regarding PostgreSQL 18:
-> * The `backups` container image currently includes `postgresql17-client`, meaning it won't be able to back up your DB if you use PostgreSQL 18.
-    Consider using an alternative backup solution if you're using PostgreSQL 18.
-> * The PostgreSQL 18 Docker image changed the volume from `/var/lib/postgresql/data` to `/var/lib/postgresql`.
+> * Support for backing up PostgreSQL 18 databases via the `backups` container image was introduced on 2025-12-04.
+> * PostgreSQL 18 (and newer) Docker images have changed the volume from `/var/lib/postgresql/data` to `/var/lib/postgresql`.
 >   The example below includes a commented-out volume mapping that demonstrates this.
 >   * See <https://hub.docker.com/_/postgres> and <https://github.com/docker-library/postgres/pull/1259> for more info.
 
