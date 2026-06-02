@@ -8,17 +8,18 @@ url: "https://tt-rss.org"
 
 # based upon what the github-pages gem included
 plugins:
-# - jekyll-coffeescript
-# - jekyll-commonmark-ghpages
-# - jekyll-gist
-# - jekyll-github-metadata
-# - jekyll-paginate
-# - jekyll-relative-links
-# - jekyll-optional-front-matter
-# - jekyll-readme-index
-# - jekyll-default-layout
-# - jekyll-titles-from-headings
+- jekyll-coffeescript
+- jekyll-commonmark-ghpages
+- jekyll-default-layout
+- jekyll-gist
+- jekyll-github-metadata
+- jekyll-optional-front-matter
+- jekyll-paginate
+- jekyll-readme-index
+- jekyll-relative-links
 - jekyll-remote-theme
+- jekyll-seo-tag
+- jekyll-titles-from-headings
 
 # Just the Docs theme settings
 color_scheme: light
