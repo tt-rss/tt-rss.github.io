@@ -13,6 +13,7 @@ plugins:
 - jekyll-default-layout
 - jekyll-gist
 - jekyll-github-metadata
+- jekyll-include-cache
 - jekyll-optional-front-matter
 - jekyll-paginate
 - jekyll-readme-index
