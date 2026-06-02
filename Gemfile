@@ -1,5 +1,8 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-remote-theme"
-gem "webrick", "~> 1.7"
+gem 'base64'
+gem 'bigdecimal'
+gem 'github-pages', group: :jekyll_plugins
+gem 'jekyll-remote-theme'
+gem 'rexml'
+gem 'webrick', '~> 1.7'
