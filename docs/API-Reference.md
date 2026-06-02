@@ -12,20 +12,24 @@ nav_order: 60
 
 ---
 
-API is pluggable, plugins can use host <code>add\_api\_method()</code> to add
-custom API calls (see <code>classes/pluginhost.php</code> for details).
+### Getting started
 
-API is stateful. You need to login and maintain a session ID to perform further operations. Session ID should be specified using JSON parameter **sid**. I.e.
+* The API is stateful. You'll need to login and maintain a session ID to perform further operations.
+  The session ID should be specified using JSON parameter **sid**.  For example:
+  * ```bash
+    curl --json -d '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/api/
 
-```bash
-curl -d '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/api/
-```
-
-All API calls output JSON-encoded data. API can be enabled or disabled
-per-user in the preferences. Client parameters should be passed encoded
-using JSON in HTTP POST data (supported since version 1.5.3). Older
-versions allowed passing parameters using HTTP GET and POST, but this is
-no longer supported.
+    # ... or for older curl versions:
+    curl -H 'Content-Type: application/json; charset=utf-8' -d '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/api/
+    ```
+* All API calls output JSON.
+* Parameters should be passed encoded using JSON in HTTP `POST` data.
+  * Older versions allowed passing parameters using HTTP `GET` and `POST`, but this is no longer supported.
+  * Clients **must** pass an appropriate `Content-Type` request header
+    (e.g. `Content-Type: application/json; charset=utf-8`, `Content-Type: application/json`, etc.).
+* The API can be enabled or disabled per-user in Preferences.
+* The API is extensible.  Plugins can use <code>PluginHost#add_api_method()</code> to add custom API calls
+  (see <code>classes/PluginHost.php</code> for details).
 
 ### Numeric values
 
@@ -46,11 +50,11 @@ For boolean parameters the expected syntax is:
 ## Testing API calls (using curl)
 
 ```bash
-curl -d '{"op":"login","user":"you","password":"xxx"}' http://example.com/tt-rss/api/
+curl --json -d '{"op":"login","user":"you","password":"xxx"}' http://example.com/tt-rss/api/
 ```
 
 ```bash
-curl -d '{"sid":"...","op":"getHeadlines","feed_id":"0","is_cat":"1"}' http://example.com/tt-rss/api/
+curl --json -d '{"sid":"...","op":"getHeadlines","feed_id":"0","is_cat":"1"}' http://example.com/tt-rss/api/
 ```
 
 Most of the calls (except login, logout, isLoggedIn) require valid login session
