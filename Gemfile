@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'base64'
 gem 'bigdecimal'
 gem 'csv'
-gem 'github-pages', group: :jekyll_plugins
+gem 'jekyll', '~> 4.4'
 gem 'jekyll-remote-theme'
 gem 'logger'
 gem 'rexml'
