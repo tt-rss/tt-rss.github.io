@@ -17,7 +17,7 @@ nav_order: 60
 * The API is stateful. You'll need to login and maintain a session ID to perform further operations.
   The session ID should be specified using JSON parameter **sid**.  For example:
   * ```bash
-    curl --json -d '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/api/
+    curl --json '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/api/
 
     # ... or for older curl versions:
     curl -H 'Content-Type: application/json; charset=utf-8' -d '{"sid":"your-session-id","op":"getVersion"}' http://example.com/tt-rss/api/
@@ -50,11 +50,11 @@ For boolean parameters the expected syntax is:
 ## Testing API calls (using curl)
 
 ```bash
-curl --json -d '{"op":"login","user":"you","password":"xxx"}' http://example.com/tt-rss/api/
+curl --json '{"op":"login","user":"you","password":"xxx"}' http://example.com/tt-rss/api/
 ```
 
 ```bash
-curl --json -d '{"sid":"...","op":"getHeadlines","feed_id":"0","is_cat":"1"}' http://example.com/tt-rss/api/
+curl --json '{"sid":"...","op":"getHeadlines","feed_id":"0","is_cat":"1"}' http://example.com/tt-rss/api/
 ```
 
 Most of the calls (except login, logout, isLoggedIn) require valid login session
