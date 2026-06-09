@@ -42,5 +42,5 @@ Theme emulates the paper/brownish look of the Reeder App from IOS.
 
 **Github**
 
-* tt-rss \>1.11 <https://github.com/tschinz/tt-rss\_reeder\_theme>
-* tt-rss \<1.11 (old-version) <https://github.com/tschinz/tt-rss\_reeder\_theme/tree/legacy>
+* tt-rss \>1.11 <https://github.com/tschinz/tt-rss_reeder_theme>
+* tt-rss \<1.11 (old-version) <https://github.com/tschinz/tt-rss_reeder_theme/tree/legacy>

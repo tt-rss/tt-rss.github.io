@@ -129,7 +129,7 @@ session ID even if you are using single user mode. You can omit user and
 password parameters.
 
 - On version:1.6.0 and above login also returns current API level as an
-  <code>api\_level</code> integer, you can use that instead of calling `getApiLevel` after login.
+  <code>api_level</code> integer, you can use that instead of calling `getApiLevel` after login.
 - Since API 17, also returns configuration object (see [`getConfig`](#getconfig) below).
 
 ### logout
@@ -281,7 +281,7 @@ Parameters:
 E.g. to set unread status of articles X and Y to false use the
 following:
 
-<code>?article\_ids=X,Y&mode=0&field=2</code>
+<code>?article_ids=X,Y&mode=0&field=2</code>
 
 Since version:1.5.0 returns a status message:
 
@@ -391,7 +391,7 @@ Before version:1.7.5
 Returned id is an internal database id of the label, you can convert it
 to the valid feed id like this:
 
-<code>feed\_id = \-11 - label\_id</code>
+<code>feed_id = -11 - label_id</code>
 
 After:
 

@@ -68,9 +68,9 @@ generated feeds.
 
 - <code>adaptive</code> - shows unread articles only when they are
     unread articles, shows everything otherwise
-- <code>marked</code> (this means starred), <code>has\_note</code>,
+- <code>marked</code> (this means starred), <code>has_note</code>,
     <code>published</code>, <code>unread</code>,
-    <code>unread\_first</code> - should be self explanatory
+    <code>unread_first</code> - should be self explanatory
 
 Actual output may differ between modes for several special feeds for
 usability reasons, e.g. recently read feed ignores <code>unread</code>
