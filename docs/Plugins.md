@@ -38,9 +38,10 @@ If you are interested in making plugins, see [Making-Plugins](Making-Plugins),
 {: .note }
 > First party plugins can be added via built-in plugin installer in `Preferences` &rarr; `Plugins`.
 
-Copy plugin folder to ```tt-rss/plugins.local``` then activate it in the settings panel.
-Plugin folder name should correspond to plugin class name defined in ``(plugin)/init.php``,
-i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``.
+Copy the plugin folder to ```tt-rss/plugins.local``` then activate it in the settings panel.
+The plugin folder name must correspond to the plugin class name defined in ``(plugin)/init.php``, lowercased,
+i.e. ``Af_ExamplePlugin`` must be copied to ``plugins.local/af_exampleplugin``,
+otherwise the plugin is not detected.
 
 ## First party plugins (maintained as part of the project but not bundled with tt-rss)
 
