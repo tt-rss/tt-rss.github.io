@@ -31,6 +31,7 @@ A search query consists of one or more keywords, of which there are 3 types:
     * `pub:true`, `pub:false` - match published or unpublished articles
     * `title:sometext`, `title:"two words"` - match articles with a title containing the specified text (sub-string match)
     * `author:sometext`, `author:"two words"` - match articles with an author containing the specified text (sub-string match)
+    * `feed:sometext`, `feed:"two words"` - match articles from a feed with a title containing the specified text (sub-string match)
     * `note:true`, `note:false`, `note:sometext`, `note:"two words"` - match articles with any note, no note, or a note containing the specified text (sub-string match)
     * `label:true`, `label:false`, `label:somelabel`, `label:"two words"` - match articles with any label, no label, or having the specified label (exact-string match)
     * `tag:true`, `tag:false`, `tag:sometag`, `tag:"two words"` - match articles with any tag, no tag, or having the specified tag (exact-string match)
