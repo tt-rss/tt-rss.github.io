@@ -438,6 +438,16 @@ Parameters:
 * ``feed_url`` - Feed URL (string)
 * ``category_id`` - Category id to place feed into (defaults to 0, Uncategorized) (int)
 * ``login``, ``password`` - Self explanatory (string)
+* ``update_interval`` (integer, API level 24) - Optional update interval in
+  minutes. Use `0` for the user's default interval or `-1` to disable
+  automatic updates.
+
+If the feed is already subscribed, this method returns status code 0 and
+does not change its interval.
+
+The web feed editor offers 15, 30, 60, 240, 720, 1440, and 10080 minutes.
+Other positive values work through the API, but the editor cannot show them.
+Saving the editor dialog can replace those values.
 
 ### unsubscribeFeed (API level 5 --version:1.7.6)
 
