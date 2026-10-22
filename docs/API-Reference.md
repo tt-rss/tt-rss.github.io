@@ -428,6 +428,27 @@ Parameters:
 * ``content`` - Article content (string)
 * ``sanitize`` (bool) - allows inserting HTML if disabled **requires API level 20** (default:-true)
 
+### getFeedUpdateIntervals (since API level 25)
+
+Returns valid feed update interval values and their translated (`Accept-Language`)
+display names.
+
+```json
+{
+  "update_intervals": {
+      "-1": "Disable updates",
+      "0": "Default interval",
+      "15": "15 minutes",
+      "30": "30 minutes",
+      "60": "Hourly",
+      "240": "4 hours",
+      "720": "12 hours",
+      "1440": "Daily",
+      "10080": "Weekly"
+    }
+}
+```
+
 ### subscribeToFeed (API level 5 --version:1.7.6)
 
 Subscribes to specified feed, returns a status code. See
@@ -439,15 +460,12 @@ Parameters:
 * ``category_id`` - Category id to place feed into (defaults to 0, Uncategorized) (int)
 * ``login``, ``password`` - Self explanatory (string)
 * ``update_interval`` (integer, API level 24) - Optional update interval in
-  minutes. Use `0` for the user's default interval or `-1` to disable
-  automatic updates.
+  minutes. Use `0` for the user's default interval, `-1` to disable
+  automatic updates, or an allowed value (determined via `getFeedUpdateIntervals` or
+  just assume `15`, `30`, `60`, `240`, `720`, `1440`, `10080`).
 
 If the feed is already subscribed, this method returns status code 0 and
 does not change its interval.
-
-The web feed editor offers 15, 30, 60, 240, 720, 1440, and 10080 minutes.
-Other positive values work through the API, but the editor cannot show them.
-Saving the editor dialog can replace those values.
 
 ### unsubscribeFeed (API level 5 --version:1.7.6)
 
