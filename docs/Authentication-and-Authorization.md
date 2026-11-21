@@ -24,7 +24,7 @@ The bundled authentication plugins are:
     * For backwards compatibility the `Remote-User` request header is included as a trusted source,
       but only checked after certain server-set values.  If you don't want that header to be checked
       you should set `TTRSS_AUTH_REMOTE_TRUSTED_SOURCES` or remove the header before it reaches tt-rss.
-      Thank you to EZO Labs Security (GitHub user superbot-helper; https://ezolabs.net, tony@ezolabs.net)
+      Thank you to EZO Labs Security (GitHub user superbot-helper; [https://ezolabs.net](https://ezolabs.net), `tony@ezolabs.net`)
       for highlighting the potential `Remote-User` concern.
 
 ### Authorization
